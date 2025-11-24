@@ -1,4 +1,8 @@
-  <title>Яндекс.Диск| Скачать Яндекс Диск</title>
+---
+layout: default
+title: Яндекс.Диск| Скачать Яндекс Диск
+description: Скачайте Яндекс Диск бесплатно на компьютер Windows.
+---
 <style>
     :root{
       --bg:#f4f7fb;
