@@ -1,2 +1,4 @@
-<title>{{ page.title }}</title>
-<meta name="description" content="{{ page.description }}">
+title: О проекте LoadBrowser
+description: Узнайте, как работает LoadBrowser и как безопасно устанавливать расширения для браузера.
+
+<p>hgfhgf</p>
