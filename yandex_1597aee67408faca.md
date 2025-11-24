@@ -1,4 +1,1 @@
- <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>Verification: 1597aee67408faca</body>
+Verification: 1597aee67408faca
