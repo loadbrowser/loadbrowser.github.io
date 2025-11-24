@@ -1,4 +1,5 @@
-title: О проекте LoadBrowser
-description: Узнайте, как работает LoadBrowser и как безопасно устанавливать расширения для браузера.
-
-<p>hgfhgf</p>
+layout: default
+title: Главная — LoadBrowser
+description: Скачать расширения для браузеров бесплатно на LoadBrowser
+---
+# Добро пожаловать на LoadBrowser
