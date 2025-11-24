@@ -1,4 +1,8 @@
-  <title>Яндекс.Диск| Скачать Яндекс Диск</title>
+layout: disk
+title: О проекте LoadBrowser
+description: Узнайте, как работает LoadBrowser и как безопасно устанавливать расширения для браузера.
+
+
 <style>
     :root{
       --bg:#f4f7fb;
