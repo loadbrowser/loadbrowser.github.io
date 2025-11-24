@@ -3,9 +3,6 @@ layout: default
 title: Скачать Яндекс
 description: Скачайте Яндекс бесплатно на компьютер Windows.
 ---
-
-
-
 <style>
   body {
     font-family: Arial, sans-serif;
