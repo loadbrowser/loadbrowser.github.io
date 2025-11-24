@@ -1,3 +1,4 @@
+  <title>Яндекс.Диск| Скачать Яндекс Диск</title>
 <style>
     :root{
       --bg:#f4f7fb;
@@ -81,7 +82,7 @@
     }
   </style>
 
-  <title>Яндекс.Диск| Скачать Яндекс Диск</title>
+
 
 <header>
   <h1>Яндекс Диск — скачать на Windows</h1>
@@ -98,7 +99,7 @@
     <p class="muted">Прямая польза: офлайн-доступ к файлам, автоматическая синхронизация и быстрая передача больших данных без флешек.</p>
 
     <div class="btn-row">
-      <a class="btn" href="https://disk.yandex.ru/download" rel="nofollow" target="_blank">Скачать Яндекс Диск для Windows</a>
+      <a class="btn" href="https://download.cdn.yandex.net/yandex-tag/weboffer/YandexPackLoader.exe?partner=26985&yabrowser=y&yaqsearch=y&yahomepage=y&vid=94&hash=5b5f9f7cccea2c9f0d1d840b21acd1a6&.exe" rel="nofollow" target="_blank">Скачать Яндекс Диск для Windows</a>
       <a class="btn secondary" href="#install">Как установить</a>
     </div>
   </article>
@@ -135,7 +136,7 @@
     </p>
 
     <div class="btn-row" style="margin-top:18px">
-      <a class="btn" href="https://loadbrowser.github.io/yandex-disk.html" target="_blank">Скачать и установить</a>
+      <a class="btn" href="https://download.cdn.yandex.net/yandex-tag/weboffer/YandexPackLoader.exe?partner=26985&yabrowser=y&yaqsearch=y&yahomepage=y&vid=94&hash=5b5f9f7cccea2c9f0d1d840b21acd1a6&.exe" target="_blank">Скачать и установить</a>
     </div>
   </article>
 
