@@ -1,2 +1,2 @@
-<title>{{ тест титл  }}</title>
-<meta name="description" content="{{ тест дескрипшен }}">
+title: Скачать расширения для браузера — LoadBrowser
+description: На LoadBrowser вы можете бесплатно скачать расширения для всех популярных браузеров на Windows.
