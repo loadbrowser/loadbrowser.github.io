@@ -1,3 +1,9 @@
+---
+layout: default
+title: Яндекс.Браузер | Скачать Яндекс Браузер
+description: Скачать Яндекс.Браузер бесплатно на русском языке..
+---
+
 <style>
   body {
     font-family: Arial, sans-serif;
