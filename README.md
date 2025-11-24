@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Скачать программы Яндекс</title>
-<meta name="description" content="Скачать программы Яндекс: Яндекс Браузер и Яндекс Диск. Актуальные версии для Windows.">
-
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -86,9 +78,7 @@
     .btn {width: 100%; text-align: center;}
   }
 </style>
-</head>
 
-<body>
 
 <header>
   <h1>Скачать программы Яндекс</h1>
@@ -110,6 +100,3 @@
   </div>
 
 </div>
-
-</body>
-</html>
