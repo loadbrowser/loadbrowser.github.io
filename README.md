@@ -18,7 +18,7 @@
   <div class="block">
     <h2>Яндекс Браузер</h2>
     <p>Яндекс Браузер — быстрый браузер на основе Chromium с технологией защиты Protect, синхронизацией данных и поддержкой расширений. Подходит для стабильной работы, доступа к сервисам Яндекса и безопасного веб-серфинга.</p>
-    <a class="btn" href="https://browser.yandex.ru/download/" rel="nofollow">Скачать</a>
+    <a class="btn" href="https://loadbrowser.github.io/yandex-browser.html" rel="nofollow">Скачать</a>
   </div>
 
   <div class="block">
