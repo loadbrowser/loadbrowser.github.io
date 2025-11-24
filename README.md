@@ -1,35 +1,30 @@
-  <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="yandex-verification" content="1597aee67408faca"/>
+  <style>
+    body {font-family: Arial, sans-serif; margin: 0; padding: 0; background:#f7f7f7;}
+    header {background:#222; color:#fff; padding:20px; text-align:center;}
+    .wrap {max-width:900px; margin:0 auto; padding:20px;}
+    .block {background:#fff; padding:20px; margin-bottom:20px; border-radius:8px;}
+    .block h2 {margin-top:0;}
+    a.btn {display:inline-block; padding:10px 18px; background:#0073ff; color:#fff; text-decoration:none; border-radius:6px;}
+  </style>
 
-    </head>
 
-<div class="elementor-element elementor-element-a402350 elementor-widget elementor-widget-wd_text_block" data-id="a402350" data-element_type="widget" data-widget_type="wd_text_block.default">
-<div class="elementor-widget-container">
-<div class="wd-text-block reset-last-child text-left">
 
-В <a href="https://loadbrowser.ru/product/ya/">Яндекс Браузере</a> доступна съемка экрана, выбранной области и полной веб-страницы. Снимок можно отредактировать и отправить другим пользователям или в техподдержку.
+  <h1>Скачать программы Яндекс</h1>
+  <p>Актуальные версии для Windows</p>
 
-</div>
-</div>
-</div>
-<div class="elementor-element elementor-element-2aafd0f wd-width-100 elementor-widget elementor-widget-wd_title" data-id="2aafd0f" data-element_type="widget" data-widget_type="wd_title.default">
-<div class="elementor-widget-container">
-<div class="title-wrapper wd-set-mb reset-last-child wd-title-color-default wd-title-style-default wd-title-size-default text-left">
-<div class="liner-continer"><span id="elementor-toc__heading-anchor-0" class="elementor-menu-anchor "></span>
-<h2 class="woodmart-title-container title wd-fontsize-l">Как сделать скриншот</h2>
-</div>
-<div class="title-after_title reset-last-child wd-fontsize-xs">
 
-На боковой панели нажмите значок инструмента и выберите нужный режим:
-<ul>
- 	<li><strong>Выделенная область</strong>. Отметьте участок мышью. Справа внизу появятся размеры выделения.</li>
- 	<li><strong>Весь экран</strong>. Захват всего экрана.</li>
- 	<li><strong>Веб-страница</strong>. Полный снимок открытого сайта.</li>
-</ul>
-После этого откроется окно редактирования. Если сохранять не нужно, закройте его и выберите «Не сохранять».
+<div class="wrap">
 
-</div>
-</div>
-</div>
+  <div class="block">
+    <h2>Яндекс Браузер</h2>
+    <p>Яндекс Браузер — быстрый браузер на основе Chromium с технологией защиты Protect, синхронизацией данных и поддержкой расширений. Подходит для стабильной работы, доступа к сервисам Яндекса и безопасного веб-серфинга.</p>
+    <a class="btn" href="https://browser.yandex.ru/download/" rel="nofollow">Скачать</a>
+  </div>
+
+  <div class="block">
+    <h2>Яндекс Диск</h2>
+    <p>Яндекс Диск — облачное хранилище с автоматической загрузкой файлов, резервными копиями и доступом с компьютера и телефона. Позволяет хранить документы, фото и видео, освобождать память и делиться файлами по ссылке.</p>
+    <a class="btn" href="https://disk.yandex.ru/download" rel="nofollow">Скачать</a>
+  </div>
+
 </div>
