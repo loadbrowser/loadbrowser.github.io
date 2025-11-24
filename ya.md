@@ -1,5 +1,7 @@
 ---
 layout: default
-title: О проекте LoadBrowser
-description: Узнайте, как работает LoadBrowser.
+title: ya проверка
+description: Узнайте ya.
 ---
+
+Проверка
