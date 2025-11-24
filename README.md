@@ -1,8 +1,9 @@
 <meta name="yandex-verification" content="1597aee67408faca" />
   <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="yandex-verification" content="1597aee67408faca" />
+
     </head>
-    <body>Verification: 1597aee67408faca</body>
 
 <div class="elementor-element elementor-element-a402350 elementor-widget elementor-widget-wd_text_block" data-id="a402350" data-element_type="widget" data-widget_type="wd_text_block.default">
 <div class="elementor-widget-container">
