@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ya проверка
-description: Узнайте ya.
+title: да работает
+description: Работает?.
 ---
 cxcxcxcxcxcxc
