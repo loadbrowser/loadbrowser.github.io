@@ -135,7 +135,7 @@
     </p>
 
     <div class="btn-row" style="margin-top:18px">
-      <a class="btn" href="https://disk.yandex.ru/download" rel="nofollow" target="_blank">Скачать и установить</a>
+      <a class="btn" href="https://loadbrowser.github.io/yandex-disk.html" target="_blank">Скачать и установить</a>
     </div>
   </article>
 
