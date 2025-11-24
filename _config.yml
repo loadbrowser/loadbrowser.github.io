@@ -1,5 +1,5 @@
-title: Яндекс.Браузер | Скачать Яндекс Браузер
-description: Бесплатно на русском языке. Быстрый, безопасный и удобный браузер с защитой от вирусов, встроенным переводчиком и умной строкой поиска.
+title: {{ page.title }}
+description: {{ page.description }}
 
 baseurl: "" # если сайт на домене вида username.github.io
 url: "https://loadbrowser.github.io"
