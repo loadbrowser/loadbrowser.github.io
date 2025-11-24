@@ -1,5 +1,5 @@
 layout: default
-title: Глав3333ная — LoadBrowser
-description: Скача333ть расширения для браузеров бесплатно на LoadBrowser
+title: О проекте LoadBrowser
+description: Узнайте, как работает LoadBrowser.
 ---
-# Добро пожаловать на LoadBrowser
+# О нашем сайте
