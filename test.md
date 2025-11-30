@@ -2,47 +2,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Софт — загрузки</title>
-  <meta name="description" content="Скачайте Яндекс.Браузер, Яндекс.Диск и Яндекс.Браузер с VPN. Легко. Быстро. Надежно.">
+  <title>Яндекс Софт</title>
+  <meta name="description" content="Скачайте Яндекс.Браузер, Яндекс.Диск и Яндекс.Браузер с VPN. Стиль Яндекс.Браузера.">
   <style>
     :root {
-      --bg: #f5f7fa;
-      --card: #ffffff;
-      --accent: #0061ff;
+      --bg: #ffffff;
+      --primary: #ff0000;
+      --secondary: #f3f3f3;
+      --text: #1c1c1c;
       --muted: #6b7280;
-      --radius: 12px;
+      --radius: 8px;
       --shadow: 0 4px 12px rgba(0,0,0,0.08);
       --maxw: 1100px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: #111; display: flex; justify-content: center; font-size: 16px; line-height: 1.5; }
-
+    body { background: var(--secondary); color: var(--text); display: flex; justify-content: center; font-size: 16px; line-height: 1.5; }
     .wrap { max-width: var(--maxw); width: 100%; padding: 40px 20px; }
 
     /* Header */
     header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap; }
-    .logo { font-weight: bold; font-size: 22px; color: var(--accent); }
-    nav a { text-decoration: none; color: #fff; background: var(--accent); padding: 10px 16px; border-radius: var(--radius); font-weight: 600; white-space: nowrap; }
+    .logo { font-weight: bold; font-size: 24px; color: var(--primary); }
+    nav a { text-decoration: none; color: #fff; background: var(--primary); padding: 10px 20px; border-radius: var(--radius); font-weight: 600; white-space: nowrap; }
 
     /* Hero */
-    .hero { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); display: flex; gap: 20px; padding: 30px; margin-bottom: 40px; flex-wrap: wrap; }
+    .hero { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); display: flex; gap: 30px; padding: 40px; margin-bottom: 40px; flex-wrap: wrap; }
     .hero-text { flex: 1; min-width: 280px; }
-    .hero-text h1 { font-size: 28px; margin-bottom: 12px; }
-    .hero-text p { color: var(--muted); margin-bottom: 16px; }
-    .hero-text a { text-decoration: none; color: #fff; background: var(--accent); padding: 10px 16px; border-radius: var(--radius); font-weight: 600; white-space: nowrap; }
+    .hero-text h1 { font-size: 32px; margin-bottom: 16px; color: var(--text); }
+    .hero-text p { color: var(--muted); margin-bottom: 20px; font-size: 16px; }
+    .hero-text a { text-decoration: none; color: #fff; background: var(--primary); padding: 12px 24px; border-radius: var(--radius); font-weight: 600; white-space: nowrap; }
     .hero-img { flex: 1; min-width: 220px; display: flex; justify-content: center; align-items: center; }
-    .hero-img svg { width: 220px; height: 140px; }
+    .hero-img svg { width: 240px; height: 160px; }
 
     /* Apps Grid */
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 40px; }
-    .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
-    .card h3 { font-size: 20px; margin-bottom: 6px; }
+    .card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; display: flex; flex-direction: column; gap: 12px; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-4px); }
+    .card h3 { font-size: 20px; margin-bottom: 8px; color: var(--text); }
     .card p { color: var(--muted); font-size: 14px; flex: 1; }
-    .card .actions { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
-    .card .actions a { text-decoration: none; padding: 8px 14px; border-radius: var(--radius); font-weight: 600; border: 1px solid rgba(0,0,0,0.1); white-space: nowrap; }
-    .card .actions a.primary { background: var(--accent); color: #fff; border: none; }
+    .card .actions { display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+    .card .actions a { text-decoration: none; padding: 10px 16px; border-radius: var(--radius); font-weight: 600; border: 1px solid rgba(0,0,0,0.1); white-space: nowrap; transition: background 0.2s, color 0.2s; }
+    .card .actions a.primary { background: var(--primary); color: #fff; border: none; }
+    .card .actions a:hover { opacity: 0.9; }
 
     /* Footer */
     footer { text-align: center; color: var(--muted); font-size: 14px; padding: 20px 0; }
@@ -51,7 +53,7 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="logo">Софт</div>
+      <div class="logo">Яндекс Софт</div>
       <nav>
         <a href="#apps">Загрузки</a>
       </nav>
@@ -59,15 +61,15 @@
 
     <section class="hero">
       <div class="hero-text">
-        <h1>Безопасный софт для Windows и macOS</h1>
-        <p>Скачайте Яндекс.Браузер, Яндекс.Диск и Яндекс.Браузер с VPN. Легко, быстро, надежно.</p>
+        <h1>Скачайте приложения Яндекс</h1>
+        <p>Яндекс.Браузер, Яндекс.Диск и Яндекс.Браузер с VPN. Стиль Яндекс, удобство и безопасность.</p>
         <a href="#apps">Скачать</a>
       </div>
       <div class="hero-img">
-        <svg viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="220" height="140" rx="12" fill="#e3ebf6"/>
-          <circle cx="60" cy="70" r="30" fill="#0061ff"/>
-          <rect x="110" y="50" width="100" height="40" rx="6" fill="#cce0ff"/>
+        <svg viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="240" height="160" rx="12" fill="#f3f3f3"/>
+          <circle cx="70" cy="80" r="35" fill="var(--primary)"/>
+          <rect x="120" y="60" width="100" height="40" rx="6" fill="#ffecec"/>
         </svg>
       </div>
     </section>
@@ -100,7 +102,7 @@
     </main>
 
     <footer>
-      © 2025 Софт. GitHub Pages.
+      © 2025 Яндекс Софт. GitHub Pages.
     </footer>
   </div>
 </body>
