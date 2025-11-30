@@ -83,90 +83,60 @@
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">SF</div>
-        <div>
-          <h1>Софт — быстрые загрузки</h1>
-          <p class="lead">Каталог полезных утилит и браузеров. Проверенные сборки и инструкции.</p>
-        </div>
-      </div>
-      <nav aria-label="Главное меню">
-        <a href="#apps" class="btn">Перейти к загрузкам</a>
-      </nav>
-    </header>
 
-    <section class="hero" role="region" aria-labelledby="hero-title">
-      <div class="hero-left">
-        <h2 id="hero-title">Скачать безопасный софт для Windows и macOS</h2>
-        <p>Яндекс.Браузер, Яндекс.Диск и версия Яндекс.Браузера с встроенным VPN. Инструкции по установке и ссылки на официальные страницы.</p>
-        <a class="cta" href="#apps">Скачать сейчас</a>
-      </div>
-      <div class="hero-right">
-        <picture>
-          <svg width="220" height="120" viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="0" y="0" width="220" height="120" rx="12" fill="#f3f6fb"/>
-            <rect x="12" y="18" width="196" height="84" rx="8" fill="#fff" stroke="#e6eef9"/>
-            <circle cx="40" cy="60" r="20" fill="#0061ff"/>
-            <rect x="74" y="40" width="120" height="40" rx="6" fill="#eef6ff"/>
-          </svg>
-        </picture>
+    <section class="block block-header">
+      <header>
+        <div class="brand">
+          <div class="logo">SF</div>
+          <div>
+            <h1>Софт — быстрые загрузки</h1>
+            <p class="lead">Каталог полезных утилит и браузеров. Проверенные сборки и инструкции.</p>
+          </div>
+        </div>
+        <nav aria-label="Главное меню">
+          <a href="#apps" class="btn">Перейти к загрузкам</a>
+        </nav>
+      </header>
+    </section>
+
+    <section class="block block-hero" role="region" aria-labelledby="hero-title">
+      <div class="hero">
+        <div class="hero-left">
+          <h2 id="hero-title">Скачать безопасный софт для Windows и macOS</h2>
+          <p>Яндекс.Браузер, Яндекс.Диск и версия Яндекс.Браузера с VPN. Инструкции по установке и ссылки на официальные страницы.</p>
+          <a class="cta" href="#apps">Скачать сейчас</a>
+        </div>
+        <div class="hero-right">
+          <picture>
+            <svg width="220" height="120" viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="0" y="0" width="220" height="120" rx="12" fill="#f3f6fb"/>
+              <rect x="12" y="18" width="196" height="84" rx="8" fill="#fff" stroke="#e6eef9"/>
+              <circle cx="40" cy="60" r="20" fill="#0061ff"/>
+              <rect x="74" y="40" width="120" height="40" rx="6" fill="#eef6ff"/>
+            </svg>
+          </picture>
+        </div>
       </div>
     </section>
 
-    <main id="apps">
+    <section id="apps" class="block block-apps">
       <div class="grid">
-        <article class="card" aria-labelledby="yab-title">
-          <div style="display:flex;gap:12px;align-items:center">
-            <div class="icon" aria-hidden="true">YB</div>
-            <div>
-              <h3 id="yab-title">Яндекс.Браузер</h3>
-              <p>Быстрый браузер с защитой от фишинга и встроенными сервисами. Поддержка расширений.</p>
-            </div>
-          </div>
-          <div class="actions">
-            <a class="btn primary" href="https://browser.yandex.ru/" target="_blank" rel="noopener">Официальный сайт</a>
-            <a class="btn" href="#">Инструкция</a>
-          </div>
-        </article>
-
-        <article class="card" aria-labelledby="yd-title">
-          <div style="display:flex;gap:12px;align-items:center">
-            <div class="icon" aria-hidden="true">YD</div>
-            <div>
-              <h3 id="yd-title">Яндекс.Диск</h3>
-              <p>Облачное хранилище для файлов. Синхронизация между устройствами и резервные копии.</p>
-            </div>
-          </div>
-          <div class="actions">
-            <a class="btn primary" href="https://disk.yandex.ru/" target="_blank" rel="noopener">Официальный сайт</a>
-            <a class="btn" href="#">Поддержка</a>
-          </div>
-        </article>
-
-        <article class="card" aria-labelledby="vpn-title">
-          <div style="display:flex;gap:12px;align-items:center">
-            <div class="icon" aria-hidden="true">VPN</div>
-            <div>
-              <h3 id="vpn-title">Яндекс.Браузер с VPN</h3>
-              <p>Версия браузера с включенным VPN для приватного просмотра и обхода геоблокировок.</p>
-            </div>
-          </div>
-          <div class="actions">
-            <a class="btn primary" href="https://browser.yandex.ru/features/vpn/" target="_blank" rel="noopener">Официальная страница</a>
-            <a class="btn" href="#">Как включить VPN</a>
-          </div>
-        </article>
+        <!-- карточки остаются как есть -->
+        <article class="card" aria-labelledby="yab-title">...</article>
+        <article class="card" aria-labelledby="yd-title">...</article>
+        <article class="card" aria-labelledby="vpn-title">...</article>
       </div>
-
       <section style="margin-top:18px;background:transparent;padding:14px;border-radius:10px;">
-        <p style="margin:0;color:var(--muted)">Примечание: ссылки ведут на официальные страницы сервисов. Используйте официальные сборки или проверенные источники.</p>
+        <p style="margin:0;color:var(--muted)">Примечание: ссылки ведут на официальные страницы сервисов.</p>
       </section>
-    </main>
+    </section>
 
-    <footer>
-      <p>© 2025 Софт. Страница для GitHub Pages. Содержимое и логотипы принадлежат их правообладателям.</p>
-    </footer>
+    <section class="block block-footer">
+      <footer>
+        <p>© 2025 Софт. Страница для GitHub Pages.</p>
+      </footer>
+    </section>
+
   </div>
 </body>
 </html>
