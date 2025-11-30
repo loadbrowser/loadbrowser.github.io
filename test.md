@@ -136,7 +136,7 @@
     </ul>
   </div>
 
-  <div class="news-card">
+  <div class="news-card"> 
     <h3 class="news-title">Советы и инструкции</h3>
     <ul>
       <li>Как ускорить браузер</li>
