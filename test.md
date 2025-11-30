@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -91,6 +90,7 @@
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
   }
 
   .card:hover {
@@ -114,7 +114,6 @@
     margin-bottom: 10px;
     position: relative;
     padding-left: 15px;
-    cursor: pointer;
     transition: color 0.2s;
   }
 
@@ -127,6 +126,48 @@
   }
 
   .card ul li:hover {
+    color: #1a73e8;
+  }
+
+  /* Попап */
+  .popup-overlay {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+
+  .popup-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    text-align: left;
+  }
+
+  .popup-content h2 {
+    margin-top: 0;
+    color: #1a73e8;
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+  }
+
+  .popup-close:hover {
     color: #1a73e8;
   }
 
@@ -178,7 +219,7 @@
 </section>
 
 <section class="container" id="news">
-  <div class="card">
+  <div class="card" data-popup="popup1">
     <h3>Скачивание и установка</h3>
     <ul>
       <li>Скачать Яндекс.Браузер</li>
@@ -188,7 +229,7 @@
     </ul>
   </div>
 
-  <div class="card">
+  <div class="card" data-popup="popup2">
     <h3>Обновления и версии</h3>
     <ul>
       <li>Последняя версия 2025</li>
@@ -198,7 +239,7 @@
     </ul>
   </div>
 
-  <div class="card">
+  <div class="card" data-popup="popup3">
     <h3>Расширения и VPN</h3>
     <ul>
       <li>Adblock и блокировщики</li>
@@ -208,7 +249,7 @@
     </ul>
   </div>
 
-  <div class="card">
+  <div class="card" data-popup="popup4">
     <h3>Советы и инструкции</h3>
     <ul>
       <li>Секреты Яндекс.Браузера</li>
@@ -219,6 +260,39 @@
   </div>
 </section>
 
+<!-- Попапы -->
+<div class="popup-overlay" id="popup1">
+  <div class="popup-content">
+    <span class="popup-close">&times;</span>
+    <h2>Скачивание и установка</h2>
+    <p>Здесь вы можете скачать Яндекс.Браузер для ПК или мобильного устройства. Установка проста и бесплатна, подходит для Windows, MacOS, Android и iOS.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" id="popup2">
+  <div class="popup-content">
+    <span class="popup-close">&times;</span>
+    <h2>Обновления и версии</h2>
+    <p>Последняя версия Яндекс.Браузера включает новые функции и улучшения безопасности. Обновления доступны через браузер автоматически.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" id="popup3">
+  <div class="popup-content">
+    <span class="popup-close">&times;</span>
+    <h2>Расширения и VPN</h2>
+    <p>Вы можете добавить расширения для блокировки рекламы, VPN для безопасности и другие полезные плагины, чтобы улучшить работу браузера.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" id="popup4">
+  <div class="popup-content">
+    <span class="popup-close">&times;</span>
+    <h2>Советы и инструкции</h2>
+    <p>Изучите советы по настройке Яндекс.Браузера, ускорению работы и обеспечению безопасности, а также получите ответы на часто задаваемые вопросы.</p>
+  </div>
+</div>
+
 <footer>
   <p>© 2025 Яндекс.Браузер. Все права защищены.</p>
   <p>
@@ -227,6 +301,31 @@
     <a href="#">Контакты</a>
   </p>
 </footer>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const popups = document.querySelectorAll('.popup-overlay');
+  const closeButtons = document.querySelectorAll('.popup-close');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const popupId = card.getAttribute('data-popup');
+      document.getElementById(popupId).style.display = 'flex';
+    });
+  });
+
+  closeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.popup-overlay').style.display = 'none';
+    });
+  });
+
+  popups.forEach(popup => {
+    popup.addEventListener('click', e => {
+      if(e.target === popup) popup.style.display = 'none';
+    });
+  });
+</script>
 
 </body>
 </html>
