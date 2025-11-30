@@ -1,142 +1,108 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Софт — загрузки</title>
-  <meta name="description" content="Скачайте Яндекс.Браузер, Яндекс.Диск и Яндекс.Браузер с VPN. Легко. Быстро. Надежно." />
+  <meta name="description" content="Скачайте Яндекс.Браузер, Яндекс.Диск и Яндекс.Браузер с VPN. Легко. Быстро. Надежно.">
   <style>
-    :root{
-      --bg:#f7f9fb;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#0061ff;
-      --glass: rgba(255,255,255,0.6);
-      --radius:14px;
-      --shadow: 0 6px 18px rgba(20,23,33,0.06);
-      --maxw:1100px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color-scheme: light;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:linear-gradient(180deg,var(--bg),#ffffff 60%);
-      color:#0f1724;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:48px 20px;
+    :root {
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --accent: #0061ff;
+      --muted: #6b7280;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --maxw: 1100px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    .wrap{width:100%;max-width:var(--maxw)}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: #111; display: flex; justify-content: center; font-size: 16px; line-height: 1.5; }
 
-    header{
-      display:flex;align-items:center;justify-content:space-between;margin-bottom:28px
-    }
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:48px;height:48px;display:inline-grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,var(--accent),#00a3ff);color:#fff;font-weight:700}
-    h1{font-size:20px;margin:0}
-    p.lead{margin:6px 0 0;color:var(--muted);font-size:13px}
+    .wrap { max-width: var(--maxw); width: 100%; padding: 40px 20px; }
 
-    .hero{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:20px;
-      box-shadow:var(--shadow);
-      display:flex;gap:20px;align-items:center;margin-bottom:22px
-    }
-    .hero-left{flex:1}
-    .hero-right{width:220px;flex-shrink:0}
-    .hero h2{margin:0 0 6px;font-size:18px}
-    .hero p{margin:0;color:var(--muted);font-size:14px}
-    .cta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#00a3ff);color:#fff;text-decoration:none;font-weight:600}
+    /* Header */
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap; }
+    .logo { font-weight: bold; font-size: 22px; color: var(--accent); }
+    nav a { text-decoration: none; color: #fff; background: var(--accent); padding: 10px 16px; border-radius: var(--radius); font-weight: 600; }
 
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{
-      background:var(--card);
-      border-radius:12px;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;min-height:170px
-    }
-    .card .icon{width:56px;height:56px;border-radius:10px;background:var(--glass);display:grid;place-items:center;font-weight:700}
-    .card h3{margin:0;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:13px}
-    .actions{margin-top:auto;display:flex;gap:8px}
-    .btn{padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid rgba(15,23,36,0.06);background:transparent;color:var(--accent)}
-    .btn.primary{background:var(--accent);color:#fff;border:none}
+    /* Hero */
+    .hero { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); display: flex; gap: 20px; padding: 30px; margin-bottom: 40px; flex-wrap: wrap; }
+    .hero-text { flex: 1; min-width: 280px; }
+    .hero-text h1 { font-size: 28px; margin-bottom: 12px; }
+    .hero-text p { color: var(--muted); margin-bottom: 16px; }
+    .hero-text a { text-decoration: none; color: #fff; background: var(--accent); padding: 10px 16px; border-radius: var(--radius); font-weight: 600; }
+    .hero-img { flex: 1; min-width: 220px; display: flex; justify-content: center; align-items: center; }
+    .hero-img svg { width: 220px; height: 140px; }
 
-    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+    /* Apps Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 40px; }
+    .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+    .card h3 { font-size: 20px; margin-bottom: 6px; }
+    .card p { color: var(--muted); font-size: 14px; flex: 1; }
+    .card .actions { display: flex; gap: 10px; margin-top: 12px; }
+    .card .actions a { text-decoration: none; padding: 8px 14px; border-radius: var(--radius); font-weight: 600; border: 1px solid rgba(0,0,0,0.1); }
+    .card .actions a.primary { background: var(--accent); color: #fff; border: none; }
 
-    /* Responsive */
-    @media (max-width:900px){
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .hero-right{display:none}
-    }
-    @media (max-width:560px){
-      .grid{grid-template-columns:1fr}
-      header{flex-direction:column;align-items:flex-start;gap:12px}
-      .hero{flex-direction:column;align-items:flex-start}
-    }
+    /* Footer */
+    footer { text-align: center; color: var(--muted); font-size: 14px; padding: 20px 0; }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <header>
+      <div class="logo">Софт</div>
+      <nav>
+        <a href="#apps">Загрузки</a>
+      </nav>
+    </header>
 
-    <section class="block block-header">
-      <header>
-        <div class="brand">
-          <div class="logo">SF</div>
-          <div>
-            <h1>Софт — быстрые загрузки</h1>
-            <p class="lead">Каталог полезных утилит и браузеров. Проверенные сборки и инструкции.</p>
-          </div>
-        </div>
-        <nav aria-label="Главное меню">
-          <a href="#apps" class="btn">Перейти к загрузкам</a>
-        </nav>
-      </header>
-    </section>
-
-    <section class="block block-hero" role="region" aria-labelledby="hero-title">
-      <div class="hero">
-        <div class="hero-left">
-          <h2 id="hero-title">Скачать безопасный софт для Windows и macOS</h2>
-          <p>Яндекс.Браузер, Яндекс.Диск и версия Яндекс.Браузера с VPN. Инструкции по установке и ссылки на официальные страницы.</p>
-          <a class="cta" href="#apps">Скачать сейчас</a>
-        </div>
-        <div class="hero-right">
-          <picture>
-            <svg width="220" height="120" viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="0" y="0" width="220" height="120" rx="12" fill="#f3f6fb"/>
-              <rect x="12" y="18" width="196" height="84" rx="8" fill="#fff" stroke="#e6eef9"/>
-              <circle cx="40" cy="60" r="20" fill="#0061ff"/>
-              <rect x="74" y="40" width="120" height="40" rx="6" fill="#eef6ff"/>
-            </svg>
-          </picture>
-        </div>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Безопасный софт для Windows и macOS</h1>
+        <p>Скачайте Яндекс.Браузер, Яндекс.Диск и Яндекс.Браузер с VPN. Легко, быстро, надежно.</p>
+        <a href="#apps">Скачать</a>
+      </div>
+      <div class="hero-img">
+        <svg viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="220" height="140" rx="12" fill="#e3ebf6"/>
+          <circle cx="60" cy="70" r="30" fill="#0061ff"/>
+          <rect x="110" y="50" width="100" height="40" rx="6" fill="#cce0ff"/>
+        </svg>
       </div>
     </section>
 
-    <section id="apps" class="block block-apps">
-      <div class="grid">
-        <!-- карточки остаются как есть -->
-        <article class="card" aria-labelledby="yab-title">...</article>
-        <article class="card" aria-labelledby="yd-title">...</article>
-        <article class="card" aria-labelledby="vpn-title">...</article>
+    <main id="apps" class="grid">
+      <div class="card">
+        <h3>Яндекс.Браузер</h3>
+        <p>Быстрый браузер с защитой от фишинга и встроенными сервисами. Поддержка расширений.</p>
+        <div class="actions">
+          <a class="primary" href="https://browser.yandex.ru/" target="_blank" rel="noopener">Официальный сайт</a>
+          <a href="#">Инструкция</a>
+        </div>
       </div>
-      <section style="margin-top:18px;background:transparent;padding:14px;border-radius:10px;">
-        <p style="margin:0;color:var(--muted)">Примечание: ссылки ведут на официальные страницы сервисов.</p>
-      </section>
-    </section>
+      <div class="card">
+        <h3>Яндекс.Диск</h3>
+        <p>Облачное хранилище для файлов. Синхронизация между устройствами и резервные копии.</p>
+        <div class="actions">
+          <a class="primary" href="https://disk.yandex.ru/" target="_blank" rel="noopener">Официальный сайт</a>
+          <a href="#">Поддержка</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Яндекс.Браузер с VPN</h3>
+        <p>Версия браузера с включенным VPN для приватного просмотра и обхода геоблокировок.</p>
+        <div class="actions">
+          <a class="primary" href="https://browser.yandex.ru/features/vpn/" target="_blank" rel="noopener">Официальная страница</a>
+          <a href="#">Как включить VPN</a>
+        </div>
+      </div>
+    </main>
 
-    <section class="block block-footer">
-      <footer>
-        <p>© 2025 Софт. Страница для GitHub Pages.</p>
-      </footer>
-    </section>
-
+    <footer>
+      © 2025 Софт. GitHub Pages.
+    </footer>
   </div>
 </body>
 </html>
