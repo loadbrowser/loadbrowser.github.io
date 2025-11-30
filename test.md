@@ -3,72 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Яндекс.Браузер и VPN</title>
+<title>Новости Яндекс.Браузера</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: 'Inter', sans-serif;
-    background: #f0f2f5;
-    color: #1c1c1c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #222;
   }
 
-  header {
-    background: linear-gradient(90deg, #1a73e8, #4285f4);
-    color: #fff;
+  h1 {
     text-align: center;
-    padding: 60px 20px;
-  }
-  header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  header p {
-    font-size: 1.2rem;
-    opacity: 0.85;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: -40px auto 40px;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-  }
-
-  .card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 30px 20px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-  }
-
-  .card h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    margin-top: 40px;
+    font-size: 2rem;
     color: #1a73e8;
   }
 
-  .card ul {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .news-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
+
+  .news-title {
+    background: linear-gradient(90deg, #1a73e8, #4285f4);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .news-title::before {
+    content: "📰";
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+
+  .news-card ul {
     list-style: none;
     padding-left: 0;
+    margin: 0;
+    flex-grow: 1;
   }
 
-  .card ul li {
+  .news-card ul li {
     margin-bottom: 10px;
-    padding-left: 15px;
     position: relative;
-    font-size: 1rem;
+    padding-left: 15px;
+    transition: color 0.2s;
+    cursor: pointer;
   }
 
-  .card ul li::before {
+  .news-card ul li::before {
     content: "•";
     position: absolute;
     left: 0;
@@ -76,63 +84,69 @@
     font-weight: bold;
   }
 
-  footer {
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 0.9rem;
-    color: #555;
+  .news-card ul li:hover {
+    color: #1a73e8;
+  }
+
+  @media (max-width: 500px) {
+    .news-title {
+      font-size: 1rem;
+    }
+    .news-card {
+      padding: 15px;
+    }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Яндекс.Браузер и VPN</h1>
-  <p>Скачивание, обновление, расширения и безопасный серфинг в интернете</p>
-</header>
+<h1>Новости Яндекс.Браузера</h1>
 
 <div class="container">
-  <div class="card">
-    <h2>Скачивание и установка</h2>
+  <div class="news-card">
+    <h3 class="news-title">Скачивание и установка</h3>
     <ul>
       <li>Скачать Яндекс.Браузер</li>
       <li>Установить Яндекс.Браузер</li>
       <li>Яндекс.Браузер бесплатно</li>
-      <li>Скачать Яндекс.Браузер на телефон</li>
+      <li>Скачать на телефон</li>
       <li>Официальный Яндекс.Браузер</li>
     </ul>
   </div>
 
-  <div class="card">
-    <h2>Обновление и версии</h2>
+  <div class="news-card">
+    <h3 class="news-title">Обновление и версии</h3>
     <ul>
       <li>Версия Яндекс.Браузера</li>
-      <li>Последняя версия Яндекс.Браузера</li>
+      <li>Последняя версия 2025</li>
       <li>Обновить Яндекс.Браузер</li>
-      <li>Яндекс.Браузер 32/64 бит</li>
-      <li>Яндекс.Браузер 2025</li>
+      <li>32/64 бит</li>
+      <li>Новинки и функции</li>
     </ul>
   </div>
 
-  <div class="card">
-    <h2>Расширения и VPN</h2>
+  <div class="news-card">
+    <h3 class="news-title">Расширения и VPN</h3>
     <ul>
-      <li>Расширения Яндекс.Браузер</li>
-      <li>Плагины Яндекс.Браузер</li>
+      <li>Расширения и плагины</li>
       <li>Adblock для Яндекс.Браузера</li>
-      <li>Ublock для Яндекс.Браузера</li>
-      <li>VPN для Яндекс.Браузера</li>
-      <li>Browsec VPN</li>
-      <li>Planet VPN</li>
-      <li>AdGuard VPN</li>
-      <li>VPNly</li>
+      <li>Ublock Origin</li>
+      <li>VPN для безопасного серфинга</li>
+      <li>Browsec, Planet VPN, AdGuard VPN, VPNly</li>
+    </ul>
+  </div>
+
+  <div class="news-card">
+    <h3 class="news-title">Советы и инструкции</h3>
+    <ul>
+      <li>Как ускорить браузер</li>
+      <li>Настройки безопасности</li>
+      <li>Секреты Яндекс.Браузера</li>
+      <li>Трюки для удобного использования</li>
+      <li>FAQ и поддержка</li>
     </ul>
   </div>
 </div>
-
-<footer>
-  © 2025 Яндекс.Браузер и VPN. Все права защищены.
-</footer>
 
 </body>
 </html>
