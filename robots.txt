@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://loadbrowser.github.io/sitemap.xml
