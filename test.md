@@ -1,14 +1,15 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Яндекс Софт</title>
-  <meta name="description" content="Скачайте Яндекс.Браузер, Яндекс.Диск и Яндекс.Браузер с VPN. Стиль Яндекс.Браузера.">
+  <meta name="description" content="Скачайте Яндекс.Браузер, Яндекс.Диск и Яндекс.Браузер с VPN. Популярные функции, расширения и ответы на вопросы.">
   <style>
     :root {
       --bg: #f8f9fa;
-      --primary: #333333;
-      --secondary: #ffffff;
+      --primary: #333;
+      --secondary: #fff;
       --text: #1c1c1c;
       --muted: #6b7280;
       --radius: 12px;
@@ -64,6 +65,8 @@
       <div class="logo">Яндекс Софт</div>
       <nav>
         <a href="#apps">Загрузки</a>
+        <a href="#vpn">Популярные VPN</a>
+        <a href="#faq">FAQ</a>
       </nav>
     </header>
 
@@ -102,61 +105,40 @@
       </div>
     </main>
 
-    <h2 class="section-title">Популярные функции и расширения</h2>
+    <h2 id="vpn" class="section-title">Популярные VPN для Яндекс.Браузера</h2>
     <div class="grid">
       <div class="card">
-        <h3>Расширения и VPN</h3>
-        <p>AdBlock, Юбуст, VPN и другие расширения для защиты и удобства работы в браузере.</p>
+        <h3>Browsec VPN</h3>
+        <p>Простое и бесплатное расширение VPN для Яндекс.Браузера. Быстрое подключение к серверу.</p>
         <div class="actions">
-          <a class="primary" data-link="https://browser.yandex.ru/features/extensions/">Подробнее</a>
+          <a class="primary" data-link="https://browsec.com/">Скачать</a>
         </div>
       </div>
       <div class="card">
-        <h3>Очистка кэша и куки</h3>
-        <p>Инструменты для удаления кэша, истории и сохраненных данных для ускорения работы.</p>
+        <h3>VPNly</h3>
+        <p>Надежный VPN с расширением для Яндекс.Браузера, обеспечивает безопасность и анонимность.</p>
         <div class="actions">
-          <a class="primary" href="#">Инструкция</a>
+          <a class="primary" data-link="https://vpnly.com/">Скачать</a>
         </div>
       </div>
       <div class="card">
-        <h3>Настройки и вкладки</h3>
-        <p>Управление закладками, паролями, вкладками, режим инкогнито и другими параметрами.</p>
+        <h3>AdGuard VPN</h3>
+        <p>Защита от рекламы и трекинга, поддержка всех платформ, включая Яндекс.Браузер.</p>
         <div class="actions">
-          <a class="primary" href="#">Настройка</a>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Видео и пересказ</h3>
-        <p>Пересказ видео, встроенные функции для просмотра и управления медиа в браузере.</p>
-        <div class="actions">
-          <a class="primary" href="#">Подробнее</a>
+          <a class="primary" data-link="https://adguard.com/vpn.html">Скачать</a>
         </div>
       </div>
     </div>
 
-    <h2 class="section-title">FAQ и помощь</h2>
+    <h2 id="faq" class="section-title">FAQ и популярные вопросы пользователей</h2>
     <div class="grid">
-      <div class="card">
-        <h3>Восстановление вкладок</h3>
-        <p>Как вернуть закрытые вкладки и историю браузера.</p>
-        <div class="actions">
-          <a class="primary" href="#">Инструкция</a>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Сделать браузер основным</h3>
-        <p>Инструкция по установке Яндекс.Браузера по умолчанию на устройстве.</p>
-        <div class="actions">
-          <a class="primary" href="#">Подробнее</a>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Обновление браузера</h3>
-        <p>Как обновить Яндекс.Браузер до последней версии бесплатно.</p>
-        <div class="actions">
-          <a class="primary" href="#">Инструкция</a>
-        </div>
-      </div>
+      <div class="card"><h3>Как установить Яндекс.Браузер?</h3><p>Скачайте установщик с официального сайта и следуйте инструкциям.</p></div>
+      <div class="card"><h3>Как включить VPN в Яндекс.Браузере?</h3><p>Перейдите в настройки браузера → VPN → Включить.</p></div>
+      <div class="card"><h3>Как очистить кэш и куки?</h3><p>Настройки → История → Очистить данные просмотра.</p></div>
+      <div class="card"><h3>Как восстановить закрытые вкладки?</h3><p>История браузера → Недавно закрытые вкладки.</p></div>
+      <div class="card"><h3>Как сделать Яндекс.Браузер основным?</h3><p>Настройки → Основной браузер → Сделать Яндекс.Браузером по умолчанию.</p></div>
+      <div class="card"><h3>Как обновить Яндекс.Браузер?</h3><p>Настройки → О браузере → Проверка обновлений.</p></div>
+      <div class="card"><h3>Расширения и плагины</h3><p>Подключение AdBlock, Юбуст, VPN и других расширений через магазин расширений.</p></div>
     </div>
 
     <footer>
