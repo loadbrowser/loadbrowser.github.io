@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
@@ -25,14 +24,14 @@
     /* Header */
     header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap; }
     .logo { font-weight: bold; font-size: 22px; color: var(--accent); }
-    nav a { text-decoration: none; color: #fff; background: var(--accent); padding: 10px 16px; border-radius: var(--radius); font-weight: 600; }
+    nav a { text-decoration: none; color: #fff; background: var(--accent); padding: 10px 16px; border-radius: var(--radius); font-weight: 600; white-space: nowrap; }
 
     /* Hero */
     .hero { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); display: flex; gap: 20px; padding: 30px; margin-bottom: 40px; flex-wrap: wrap; }
     .hero-text { flex: 1; min-width: 280px; }
     .hero-text h1 { font-size: 28px; margin-bottom: 12px; }
     .hero-text p { color: var(--muted); margin-bottom: 16px; }
-    .hero-text a { text-decoration: none; color: #fff; background: var(--accent); padding: 10px 16px; border-radius: var(--radius); font-weight: 600; }
+    .hero-text a { text-decoration: none; color: #fff; background: var(--accent); padding: 10px 16px; border-radius: var(--radius); font-weight: 600; white-space: nowrap; }
     .hero-img { flex: 1; min-width: 220px; display: flex; justify-content: center; align-items: center; }
     .hero-img svg { width: 220px; height: 140px; }
 
@@ -41,8 +40,8 @@
     .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
     .card h3 { font-size: 20px; margin-bottom: 6px; }
     .card p { color: var(--muted); font-size: 14px; flex: 1; }
-    .card .actions { display: flex; gap: 10px; margin-top: 12px; }
-    .card .actions a { text-decoration: none; padding: 8px 14px; border-radius: var(--radius); font-weight: 600; border: 1px solid rgba(0,0,0,0.1); }
+    .card .actions { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+    .card .actions a { text-decoration: none; padding: 8px 14px; border-radius: var(--radius); font-weight: 600; border: 1px solid rgba(0,0,0,0.1); white-space: nowrap; }
     .card .actions a.primary { background: var(--accent); color: #fff; border: none; }
 
     /* Footer */
