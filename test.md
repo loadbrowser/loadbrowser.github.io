@@ -33,7 +33,6 @@
     .hero-text p { color: var(--muted); margin-bottom: 20px; font-size: 16px; }
     .hero-text a { text-decoration: none; color: #fff; background: var(--primary); padding: 12px 24px; border-radius: var(--radius); font-weight: 600; white-space: nowrap; }
     .hero-img { flex: 1; min-width: 220px; display: flex; justify-content: center; align-items: center; }
-    .hero-img svg { width: 240px; height: 160px; }
 
     /* Apps Grid */
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 40px; }
@@ -64,13 +63,6 @@
         <h1>Скачайте приложения Яндекс</h1>
         <p>Яндекс.Браузер, Яндекс.Диск и Яндекс.Браузер с VPN. Стиль Яндекс, удобство и безопасность.</p>
         <a href="#apps">Скачать</a>
-      </div>
-      <div class="hero-img">
-        <svg viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="240" height="160" rx="12" fill="#f3f3f3"/>
-          <circle cx="70" cy="80" r="35" fill="var(--primary)"/>
-          <rect x="120" y="60" width="100" height="40" rx="6" fill="#ffecec"/>
-        </svg>
       </div>
     </section>
 
