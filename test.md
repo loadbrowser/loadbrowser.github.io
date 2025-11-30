@@ -20,6 +20,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--bg); color: var(--text); display: flex; justify-content: center; font-size: 16px; line-height: 1.5; }
     .wrap { max-width: var(--maxw); width: 100%; padding: 0 20px; }
+
     header { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; flex-wrap: wrap; }
     .logo { font-weight: bold; font-size: 28px; color: var(--primary); }
     nav a { text-decoration: none; color: #fff; background: var(--primary); padding: 12px 28px; border-radius: var(--radius); font-weight: 600; white-space: nowrap; transition: background 0.3s; }
@@ -75,7 +76,6 @@
       </div>
     </section>
 
-    <!-- Основные приложения -->
     <main id="apps" class="grid">
       <div class="card">
         <h3>Яндекс.Браузер</h3>
@@ -103,7 +103,6 @@
       </div>
     </main>
 
-    <!-- Популярные функции -->
     <h2 class="section-title">Популярные функции и расширения</h2>
     <div class="grid">
       <div class="card">
@@ -136,7 +135,6 @@
       </div>
     </div>
 
-    <!-- Вопросы и помощь -->
     <h2 class="section-title">FAQ и помощь</h2>
     <div class="grid">
       <div class="card">
