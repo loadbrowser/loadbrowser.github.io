@@ -5,113 +5,142 @@ description: Скачать Яндекс.Браузер бесплатно на 
 ---
 
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #eef1f5;
-    color: #222;
-  }
-
-  header {
-    background: linear-gradient(135deg, #1f1f1f, #343434);
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  header h1 {
-    margin: 0;
-    font-size: 32px;
-    font-weight: 700;
-  }
-
-  header p {
-    margin: 8px 0 0;
-    font-size: 18px;
-    opacity: 0.8;
-  }
-
-  .wrap {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 20px;
-  }
-
-  .block {
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  }
-
-  h2 {
-    margin-top: 0;
-    font-size: 24px;
-    font-weight: 700;
-  }
-
-  ul li {
-    margin-bottom: 7px;
-  }
-
-  a.btn {
-    display: inline-block;
-    padding: 14px 24px;
-    background: #0073ff;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.25s ease;
-  }
-
-  a.btn:hover {
-    background: #005fcc;
-  }
-
-  /* Mobile */
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 26px;
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --accent:#ff0000;
+      --muted:#6b7280;
+      --radius:12px;
+      --maxw:900px;
     }
-    .block {
-      padding: 20px;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
     }
-    a.btn {
-      width: 100%;
-      text-align: center;
+    header{
+      background:linear-gradient(90deg,#0f1724,#1f2937);
+      color:#fff;
+      padding:36px 20px;
+      text-align:center;
     }
-  }
+    header h1{margin:0;font-size:28px;letter-spacing:-0.2px}
+    header p{margin:8px 0 0;color:rgba(255,255,255,0.86)}
+    .container{
+      max-width:var(--maxw);
+      margin:28px auto;
+      padding:0 18px 60px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 8px 24px rgba(16,24,40,0.06);
+      margin-bottom:20px;
+    }
+    h2{
+      margin:0 0 12px;
+      font-size:20px;
+      color:#0f1724;
+    }
+    p{margin:0 0 14px;color:#111827}
+    .muted{color:var(--muted);font-size:14px;margin-bottom:14px}
+    .btn-row{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 20px;
+      text-decoration:none;
+      background:var(--accent);
+      color:#fff;
+      border-radius:10px;
+      font-weight:600;
+      box-shadow:0 8px 20px rgba(255,0,0,0.12);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(255,0,0,0.18)}
+    .secondary{
+      background:#fff;
+      color:#111827;
+      border:1px solid #e6eef9;
+      box-shadow:none;
+      font-weight:600;
+    }
+    code{background:#f1f5f9;padding:4px 6px;border-radius:6px;font-family:monospace;font-size:13px}
+    footer{max-width:var(--maxw);margin:0 auto;padding:24px 18px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:680px){
+      header{padding:26px 14px}
+      header h1{font-size:22px}
+      .card{padding:18px}
+    }
 </style>
 
 <header>
-  <h1>Яндекс.Браузер | Скачать Яндекс Браузер</h1>
-  <p>Скачать последнюю версию для Windows</p>
+  <h1>Яндекс Браузер — скачать на Windows</h1>
+  <p>Инструкция по загрузке, установка и использование Яндекс Браузера на компьютере с Windows.</p>
 </header>
 
-<div class="wrap">
+<main class="container">
 
-  <div class="block">
-    <h2>Описание</h2>
-    <p>Яндекс Браузер — браузер на базе Chromium. Предлагает встроенную защиту Protect, стабильную работу, поддержку расширений и интеграцию с сервисами Яндекса. Есть синхронизация вкладок, паролей и персональных настроек.</p>
-  </div>
+  <article class="card">
+    <h2>Зачем скачивать Яндекс Браузер на Windows</h2>
+    <p>
+      Яндекс Браузер для Windows — это быстрый и безопасный браузер с встроенными инструментами для защиты данных, экономии трафика и ускорения работы в интернете. Программа позволяет синхронизировать закладки, пароли и вкладки между устройствами, что удобно при работе на разных ПК.
+    </p>
+    <p class="muted">Прямая польза: защита от вредоносных сайтов, умное сжатие страниц, встроенный VPN и быстрый доступ к популярным сервисам Яндекса.</p>
 
-  <div class="block">
-    <h2>Основные возможности</h2>
-    <ul>
-      <li>Защита Protect от вредоносных сайтов и файлов.</li>
-      <li>Синхронизация паролей и закладок.</li>
-      <li>Совместимость с расширениями Chrome Web Store.</li>
-      <li>Ускоренный режим загрузки страниц Турбо.</li>
-      <li>Умная строка поиска Алисы.</li>
-    </ul>
-  </div>
+    <div class="btn-row">
+      <a class="btn" href="https://browser.yandex.ru/download/?banerid=desktop_download_button" rel="nofollow" target="_blank">Скачать Яндекс Браузер для Windows</a>
+      <a class="btn secondary" href="#install">Как установить</a>
+    </div>
+  </article>
 
-  <div class="block">
-    <h2>Скачать</h2>
-    <p>Официальный установщик для Windows:</p>
-    <a class="btn" href="https://loadbrowser.ru/product/ya/" rel="nofollow">Скачать Яндекс Браузер</a>
-  </div>
+  <article class="card">
+    <h2>Как работает Яндекс Браузер на Windows</h2>
+    <p>
+      После установки браузер создаёт безопасное рабочее пространство для серфинга: встроенный антивирус проверяет файлы при скачивании, а технология «Турбо» ускоряет загрузку страниц при медленном интернете. Браузер следит за безопасностью, блокирует всплывающие окна и подозрительные сайты.
+    </p>
+    <p>
+      Синхронизация с аккаунтом Яндекса позволяет иметь доступ к закладкам, истории и паролям с любого устройства. Расширения и виджеты интегрируются с другими сервисами Яндекса, включая Почту, Диск и карты.
+    </p>
+  </article>
 
-</div>
+  <article class="card">
+    <h2>Основные функции и преимущества</h2>
+    <p>
+      Яндекс Браузер предлагает умные функции: встроенный VPN для безопасного доступа, Турбо для ускорения сайтов, защита от фишинга и вирусов, синхронизация данных между устройствами, голосовой поиск и удобный интерфейс. Поддержка расширений Chrome позволяет расширять функциональность браузера.
+    </p>
+    <p>
+      Для бизнеса и активных пользователей полезна возможность работать с несколькими профилями, настраивать интерфейс под себя и управлять загрузками файлов через встроенный менеджер.
+    </p>
+  </article>
+
+  <article class="card" id="install">
+    <h2>Как скачать и установить Яндекс Браузер на Windows</h2>
+    <p>
+      1. Нажмите кнопку «Скачать Яндекс Браузер для Windows» выше, чтобы перейти на официальный сайт загрузки. <br>
+      2. Запустите загруженный установщик и следуйте инструкциям мастера. Выберите язык и согласитесь с условиями. <br>
+      3. После завершения установки запустите браузер, войдите в аккаунт Яндекса для синхронизации закладок и настроек.
+    </p>
+    <p>
+      Советы: включите встроенный VPN при работе в публичных сетях, настройте Турбо для экономии трафика, а закладки и пароли можно хранить в облаке для быстрого доступа с других устройств.
+    </p>
+
+    <div class="btn-row" style="margin-top:18px">
+      <a class="btn" href="https://browser.yandex.ru/download/?banerid=desktop_download_button" target="_blank">Скачать и установить</a>
+    </div>
+  </article>
+
+</main>
