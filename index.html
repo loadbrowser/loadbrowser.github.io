@@ -15,39 +15,34 @@ description: Скачайте Яндекс бесплатно на компью�
   header {
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(135deg, #0073ff, #00c6ff);
+    background: #0073ff; /* сплошной спокойный цвет */
     color: #fff;
     position: relative;
     overflow: hidden;
   }
 
   header h1 {
-    font-size: 48px;
-    font-weight: 800;
+    font-size: 36px;
+    font-weight: 700;
     margin: 0;
     line-height: 1.2;
-    background: linear-gradient(90deg, #fff, #ffe600);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientText 5s ease infinite;
-  }
-
-  @keyframes gradientText {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    color: #ffffff; /* обычный белый текст */
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    animation: none;
+    text-shadow: none; /* убрать тень */
   }
 
   header p {
-    margin-top: 15px;
-    font-size: 20px;
+    margin-top: 10px;
+    font-size: 18px;
     font-weight: 500;
-    color: rgba(255,255,255,0.9);
-    text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    color: rgba(255, 255, 255, 0.85); /* чуть менее яркий белый */
+    text-shadow: none; /* убрать тень */
   }
 
   @media (max-width: 600px) {
-    header h1 { font-size: 32px; }
+    header h1 { font-size: 28px; }
     header p { font-size: 16px; }
   }
 
