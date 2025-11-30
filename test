@@ -1,107 +1,227 @@
-<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Софт — загрузки</title>
-  <meta name="description" content="Скачайте Яндекс.Браузер, Яндекс.Диск и Яндекс.Браузер с VPN. Легко. Быстро. Надежно." />
-  <style>
-    :root{
-      --bg:#f7f9fb;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#0061ff;
-      --glass: rgba(255,255,255,0.6);
-      --radius:14px;
-      --shadow: 0 6px 18px rgba(20,23,33,0.06);
-      --maxw:1100px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color-scheme: light;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:linear-gradient(180deg,var(--bg),#ffffff 60%);
-      color:#0f1724;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:48px 20px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Яндекс Браузер — скачать на Windows</title>
+<style>
+:root{
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --accent:#ff0000;
+  --muted:#6b7280;
+  --radius:12px;
+  --maxw:900px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:#111827;
+  line-height:1.6;
+}
+header{
+  background:linear-gradient(90deg,#0f1724,#1f2937);
+  color:#fff;
+  padding:36px 20px;
+  text-align:center;
+}
+header h1{margin:0;font-size:28px;letter-spacing:-0.2px}
+header p{margin:8px 0 0;color:rgba(255,255,255,0.86)}
+.container{
+  max-width:var(--maxw);
+  margin:28px auto;
+  padding:0 18px 60px;
+}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:0 8px 24px rgba(16,24,40,0.06);
+  margin-bottom:20px;
+}
+h2{margin:0 0 12px;font-size:20px;color:#0f1724}
+p{margin:0 0 14px;color:#111827}
+.muted{color:var(--muted);font-size:14px;margin-bottom:14px}
+.btn-row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:12px;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 20px;
+  text-decoration:none;
+  background:var(--accent);
+  color:#fff;
+  border-radius:10px;
+  font-weight:600;
+  box-shadow:0 8px 20px rgba(255,0,0,0.12);
+  transition:transform .15s ease, box-shadow .15s ease;
+  cursor:pointer;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(255,0,0,0.18)}
+.secondary{
+  background:#fff;
+  color:#111827;
+  border:1px solid #e6eef9;
+  box-shadow:none;
+  font-weight:600;
+}
+.code{background:#f1f5f9;padding:4px 6px;border-radius:6px;font-family:monospace;font-size:13px}
 
-    .wrap{width:100%;max-width:var(--maxw)}
-
-    header{
-      display:flex;align-items:center;justify-content:space-between;margin-bottom:28px
-    }
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:48px;height:48px;display:inline-grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,var(--accent),#00a3ff);color:#fff;font-weight:700}
-    h1{font-size:20px;margin:0}
-    p.lead{margin:6px 0 0;color:var(--muted);font-size:13px}
-
-    .hero{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:20px;
-      box-shadow:var(--shadow);
-      display:flex;gap:20px;align-items:center;margin-bottom:22px
-    }
-    .hero-left{flex:1}
-    .hero-right{width:220px;flex-shrink:0}
-    .hero h2{margin:0 0 6px;font-size:18px}
-    .hero p{margin:0;color:var(--muted);font-size:14px}
-    .cta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#00a3ff);color:#fff;text-decoration:none;font-weight:600}
-
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{
-      background:var(--card);
-      border-radius:12px;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;min-height:170px
-    }
-    .card .icon{width:56px;height:56px;border-radius:10px;background:var(--glass);display:grid;place-items:center;font-weight:700}
-    .card h3{margin:0;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:13px}
-    .actions{margin-top:auto;display:flex;gap:8px}
-    .btn{padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid rgba(15,23,36,0.06);background:transparent;color:var(--accent)}
-    .btn.primary{background:var(--accent);color:#fff;border:none}
-
-    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
-
-    /* Responsive */
-    @media (max-width:900px){
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .hero-right{display:none}
-    }
-    @media (max-width:560px){
-      .grid{grid-template-columns:1fr}
-      header{flex-direction:column;align-items:flex-start;gap:12px}
-      .hero{flex-direction:column;align-items:flex-start}
-    }
-  </style>
+/* Поп-ап */
+.modal{
+  display:none;
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+  background:rgba(0,0,0,0.5);
+  z-index:1000;
+  align-items:center;
+  justify-content:center;
+}
+.modal-content{
+  background:#fff;
+  border-radius:var(--radius);
+  max-width:500px;
+  padding:24px;
+  text-align:left;
+  position:relative;
+  box-shadow:0 12px 36px rgba(16,24,40,0.2);
+}
+.modal-close{
+  position:absolute;
+  top:12px;
+  right:12px;
+  background:transparent;
+  border:none;
+  font-size:20px;
+  cursor:pointer;
+  color:#111827;
+}
+.feature-card{
+  background:#fef2f2;
+  border-radius:var(--radius);
+  padding:16px;
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.feature-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(255,0,0,0.2);
+}
+footer{max-width:var(--maxw);margin:0 auto;padding:24px 18px;color:var(--muted);font-size:13px;text-align:center}
+@media (max-width:680px){
+  header{padding:26px 14px}
+  header h1{font-size:22px}
+  .card{padding:18px}
+}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">SF</div>
-        <div>
-          <h1>Софт — быстрые загрузки</h1>
-          <p class="lead">Каталог полезных утилит и браузеров. Проверенные сборки и инструкции.</p>
-        </div>
-      </div>
-      <nav aria-label="Главное меню">
-        <a href="#apps" class="btn">Перейти к загрузкам</a>
-      </nav>
-    </header>
 
-    <section class="hero" role="region" aria-labelledby="hero-title">
-      <div class="hero-left">
-        <h2 id="hero-title">Скачать безопасный софт для Windows и macOS</h2>
-        <p>Яндекс.Браузер, Яндекс.Диск и версия Яндекс.Браузера с встроенным VPN. Инструкции по установке и ссылки на официальные страницы.</p>
-        <a class="cta" href="#apps">Скачать сейчас</a>
-      </div>
-      <div class="hero-right">
-        <picture>
-          <svg width="220" height="120" viewBox="0 0 220 120" fill="none" xmlns="http://ww
+<header>
+  <h1>Яндекс Браузер — скачать на Windows</h1>
+  <p>Безопасный и быстрый браузер с встроенными инструментами для работы в интернете</p>
+</header>
+
+<main class="container">
+
+  <article class="card">
+    <h2>Зачем скачивать Яндекс Браузер</h2>
+    <p>Яндекс Браузер для Windows ускоряет работу в интернете, защищает от вирусов и фишинга, позволяет синхронизировать закладки и пароли между устройствами и обеспечивает удобный доступ к сервисам Яндекса.</p>
+    <p class="muted">Прямая польза: встроенный VPN, Турбо для медленного интернета, быстрый доступ к почте, Диску и картам.</p>
+    <div class="btn-row">
+      <a class="btn" href="https://browser.yandex.ru/download/?banerid=desktop_download_button" target="_blank">Скачать Яндекс Браузер</a>
+      <a class="btn secondary" href="#features">Функции</a>
+    </div>
+  </article>
+
+  <article class="card" id="features">
+    <h2>Основные функции</h2>
+    <div class="btn-row" style="flex-direction:column; gap:14px;">
+      <div class="feature-card" data-modal="modal1">Встроенный VPN</div>
+      <div class="feature-card" data-modal="modal2">Технология Турбо</div>
+      <div class="feature-card" data-modal="modal3">Защита от фишинга</div>
+      <div class="feature-card" data-modal="modal4">Синхронизация данных</div>
+      <div class="feature-card" data-modal="modal5">Голосовой поиск и виджеты</div>
+    </div>
+  </article>
+
+</main>
+
+<!-- Модальные окна -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <h2>Встроенный VPN</h2>
+    <p>VPN в Яндекс Браузере позволяет безопасно работать в публичных сетях, скрывает ваш IP-адрес и обходить блокировки сайтов. Настройка включается в один клик, а трафик защищён шифрованием.</p>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <h2>Технология Турбо</h2>
+    <p>Турбо ускоряет загрузку сайтов при медленном интернете, сжимая страницы и изображения. Это экономит трафик и ускоряет просмотр страниц без потери основных элементов дизайна.</p>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <h2>Защита от фишинга</h2>
+    <p>Браузер автоматически блокирует опасные сайты и подозрительные ссылки, предотвращая кражу паролей и персональных данных. При попытке открыть небезопасный ресурс появляется предупреждение.</p>
+  </div>
+</div>
+
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <h2>Синхронизация данных</h2>
+    <p>Синхронизация позволяет хранить закладки, историю, пароли и открытые вкладки в облаке. Доступ к ним возможен с любого устройства после входа в аккаунт Яндекса.</p>
+  </div>
+</div>
+
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <h2>Голосовой поиск и виджеты</h2>
+    <p>Голосовой поиск позволяет быстро находить информацию без ввода текста, а виджеты Яндекса предоставляют новости, погоду и другие полезные сервисы прямо на стартовой странице.</p>
+  </div>
+</div>
+
+<footer>
+  © 2025 Яндекс Браузер. Все права защищены.
+</footer>
+
+<script>
+// открытие модалок
+document.querySelectorAll('.feature-card').forEach(card=>{
+  card.addEventListener('click', ()=>{
+    const modalId = card.getAttribute('data-modal');
+    document.getElementById(modalId).style.display = 'flex';
+  });
+});
+
+// закрытие модалок
+document.querySelectorAll('.modal-close').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    btn.closest('.modal').style.display = 'none';
+  });
+});
+
+// закрытие по клику вне окна
+document.querySelectorAll('.modal').forEach(modal=>{
+  modal.addEventListener('click', e=>{
+    if(e.target === modal) modal.style.display = 'none';
+  });
+});
+</script>
+
+</body>
+</html>
