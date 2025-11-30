@@ -3,80 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Новости Яндекс.Браузера</title>
+<title>Яндекс.Браузер — Новости и Скачивание</title>
 <style>
   body {
+    margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f5f7fa;
-    margin: 0;
-    padding: 0;
     color: #222;
   }
 
-  h1 {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 2rem;
-    color: #1a73e8;
+  /* Хедер */
+  header {
+    background: #1a73e8;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
 
+  header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  header nav a:hover {
+    color: #ffd700;
+  }
+
+  /* Hero блок */
+  .hero {
+    background: linear-gradient(90deg, #4285f4, #1a73e8);
+    color: #fff;
+    padding: 100px 20px 60px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin: 0 0 20px;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+  }
+
+  .hero a {
+    background: #ffd700;
+    color: #222;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .hero a:hover {
+    background: #ffc107;
+  }
+
+  /* Контентные блоки */
   .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
   }
 
-  .news-card {
+  .card {
     background: #fff;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
   }
 
-  .news-card:hover {
-    transform: translateY(-4px);
+  .card:hover {
+    transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);
   }
 
-  .news-title {
-    background: linear-gradient(90deg, #1a73e8, #4285f4);
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 1.2rem;
+  .card h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    color: #1a73e8;
     margin-bottom: 15px;
-    display: flex;
-    align-items: center;
   }
 
-  .news-title::before {
-    content: "📰";
-    margin-right: 10px;
-    font-size: 1.2rem;
-  }
-
-  .news-card ul {
+  .card ul {
     list-style: none;
     padding-left: 0;
-    margin: 0;
-    flex-grow: 1;
   }
 
-  .news-card ul li {
+  .card ul li {
     margin-bottom: 10px;
     position: relative;
     padding-left: 15px;
-    transition: color 0.2s;
     cursor: pointer;
+    transition: color 0.2s;
   }
 
-  .news-card ul li::before {
+  .card ul li::before {
     content: "•";
     position: absolute;
     left: 0;
@@ -84,69 +126,107 @@
     font-weight: bold;
   }
 
-  .news-card ul li:hover {
+  .card ul li:hover {
     color: #1a73e8;
   }
 
+  /* Футер */
+  footer {
+    background: #1a73e8;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  footer a {
+    color: #ffd700;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
   @media (max-width: 500px) {
-    .news-title {
-      font-size: 1rem;
+    .hero h1 {
+      font-size: 2rem;
     }
-    .news-card {
-      padding: 15px;
+
+    .hero p {
+      font-size: 1rem;
     }
   }
 </style>
 </head>
 <body>
 
-<h1>Новости Яндекс.Браузера</h1>
+<header>
+  <div class="logo">Яндекс.Браузер</div>
+  <nav>
+    <a href="#download">Скачать</a>
+    <a href="#news">Новости</a>
+    <a href="#extensions">Расширения</a>
+    <a href="#support">Поддержка</a>
+  </nav>
+</header>
 
-<div class="container">
-  <div class="news-card">
-    <h3 class="news-title">Скачивание и установка</h3>
+<section class="hero">
+  <h1>Яндекс.Браузер — Быстрый, безопасный, удобный</h1>
+  <p>Скачайте последнюю версию Яндекс.Браузера для ПК и мобильных устройств. Наслаждайтесь безопасным веб-серфингом с расширениями и встроенным VPN.</p>
+  <a href="#download">Скачать бесплатно</a>
+</section>
+
+<section class="container" id="news">
+  <div class="card">
+    <h3>Скачивание и установка</h3>
     <ul>
       <li>Скачать Яндекс.Браузер</li>
-      <li>Установить Яндекс.Браузер</li>
-      <li>Яндекс.Браузер бесплатно</li>
-      <li>Скачать на телефон</li>
-      <li>Официальный Яндекс.Браузер</li>
+      <li>Установить на ПК</li>
+      <li>Версия для телефона</li>
+      <li>Бесплатная установка</li>
     </ul>
   </div>
 
-  <div class="news-card">
-    <h3 class="news-title">Обновление и версии</h3>
+  <div class="card">
+    <h3>Обновления и версии</h3>
     <ul>
-      <li>Версия Яндекс.Браузера</li>
       <li>Последняя версия 2025</li>
-      <li>Обновить Яндекс.Браузер</li>
       <li>32/64 бит</li>
+      <li>Обновление через браузер</li>
       <li>Новинки и функции</li>
     </ul>
   </div>
 
-  <div class="news-card">
-    <h3 class="news-title">Расширения и VPN</h3>
+  <div class="card">
+    <h3>Расширения и VPN</h3>
     <ul>
-      <li>Расширения и плагины</li>
-      <li>Adblock для Яндекс.Браузера</li>
-      <li>Ublock Origin</li>
-      <li>VPN для безопасного серфинга</li>
-      <li>Browsec, Planet VPN, AdGuard VPN, VPNly</li>
+      <li>Adblock и блокировщики</li>
+      <li>VPN для безопасности</li>
+      <li>Ublock Origin, Browsec</li>
+      <li>Дополнительные плагины</li>
     </ul>
   </div>
 
-  <div class="news-card"> 
-    <h3 class="news-title">Советы и инструкции</h3>
+  <div class="card">
+    <h3>Советы и инструкции</h3>
     <ul>
-      <li>Как ускорить браузер</li>
-      <li>Настройки безопасности</li>
       <li>Секреты Яндекс.Браузера</li>
-      <li>Трюки для удобного использования</li>
+      <li>Ускорение работы</li>
+      <li>Настройки безопасности</li>
       <li>FAQ и поддержка</li>
     </ul>
   </div>
-</div>
+</section>
+
+<footer>
+  <p>© 2025 Яндекс.Браузер. Все права защищены.</p>
+  <p>
+    <a href="#">Политика конфиденциальности</a> |
+    <a href="#">Пользовательское соглашение</a> |
+    <a href="#">Контакты</a>
+  </p>
+</footer>
 
 </body>
 </html>
