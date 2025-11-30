@@ -17,11 +17,9 @@
       --maxw: 1200px;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--bg); color: var(--text); display: flex; justify-content: center; font-size: 16px; line-height: 1.5; }
     .wrap { max-width: var(--maxw); width: 100%; padding: 0 20px; }
-
     header { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; flex-wrap: wrap; }
     .logo { font-weight: bold; font-size: 28px; color: var(--primary); }
     nav a { text-decoration: none; color: #fff; background: var(--primary); padding: 12px 28px; border-radius: var(--radius); font-weight: 600; white-space: nowrap; transition: background 0.3s; }
@@ -44,6 +42,8 @@
     .card .actions a.primary { background: #555; color: #fff; border: none; }
     .card .actions a.primary:hover { background: #333; }
     .card .actions a:hover { opacity: 0.9; }
+
+    h2.section-title { font-size: 28px; margin: 50px 0 25px 0; text-align: center; color: var(--primary); }
 
     footer { text-align: center; color: var(--muted); font-size: 14px; padding: 25px 0; }
 
@@ -75,6 +75,7 @@
       </div>
     </section>
 
+    <!-- Основные приложения -->
     <main id="apps" class="grid">
       <div class="card">
         <h3>Яндекс.Браузер</h3>
@@ -101,6 +102,65 @@
         </div>
       </div>
     </main>
+
+    <!-- Популярные функции -->
+    <h2 class="section-title">Популярные функции и расширения</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Расширения и VPN</h3>
+        <p>AdBlock, Юбуст, VPN и другие расширения для защиты и удобства работы в браузере.</p>
+        <div class="actions">
+          <a class="primary" data-link="https://browser.yandex.ru/features/extensions/">Подробнее</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Очистка кэша и куки</h3>
+        <p>Инструменты для удаления кэша, истории и сохраненных данных для ускорения работы.</p>
+        <div class="actions">
+          <a class="primary" href="#">Инструкция</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Настройки и вкладки</h3>
+        <p>Управление закладками, паролями, вкладками, режим инкогнито и другими параметрами.</p>
+        <div class="actions">
+          <a class="primary" href="#">Настройка</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Видео и пересказ</h3>
+        <p>Пересказ видео, встроенные функции для просмотра и управления медиа в браузере.</p>
+        <div class="actions">
+          <a class="primary" href="#">Подробнее</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Вопросы и помощь -->
+    <h2 class="section-title">FAQ и помощь</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Восстановление вкладок</h3>
+        <p>Как вернуть закрытые вкладки и историю браузера.</p>
+        <div class="actions">
+          <a class="primary" href="#">Инструкция</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Сделать браузер основным</h3>
+        <p>Инструкция по установке Яндекс.Браузера по умолчанию на устройстве.</p>
+        <div class="actions">
+          <a class="primary" href="#">Подробнее</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Обновление браузера</h3>
+        <p>Как обновить Яндекс.Браузер до последней версии бесплатно.</p>
+        <div class="actions">
+          <a class="primary" href="#">Инструкция</a>
+        </div>
+      </div>
+    </div>
 
     <footer>
       © 2025 Яндекс Софт. GitHub Pages.
