@@ -83,6 +83,9 @@ footer{max-width:var(--maxw);margin:0 auto;padding:24px 18px;color:var(--muted);
 <header>
   <h1>HideMyName VPN для Яндекс Браузера — безопасность и приватность</h1>
   <p>Скрывайте свой IP, обходите блокировки и просматривайте сайты безопасно с HideMyName VPN.</p>
+  <div class="btn-row" style="justify-content:center;margin-top:18px;">
+    <a class="btn" href="/" rel="nofollow">На главную</a>
+  </div>
 </header>
 
 <main class="container">
@@ -108,7 +111,7 @@ footer{max-width:var(--maxw);margin:0 auto;padding:24px 18px;color:var(--muted);
       HideMyName VPN предлагает: скрытие IP, шифрование соединения, обход блокировок и цензуры, выбор серверов из разных стран, защиту публичных Wi-Fi сетей и стабильную скорость соединения.
     </p>
     <p>
-      Программа работает на ПК и мобильных устройствах и совместима с Яндекс Браузером. Настройка проста и не требует специальных знаний.
+      Программа работает на ПК и совместима с Яндекс Браузером. Настройка проста и не требует специальных знаний.
     </p>
   </article>
 
