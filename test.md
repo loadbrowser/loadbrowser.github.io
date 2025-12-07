@@ -1,21 +1,24 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoftWeb - Лучшее программное обеспечение</title>
+    <title>LoadBrowser - Загрузчик для браузерных игр</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #4361ee;
-            --primary-dark: #3a56d4;
-            --secondary-color: #7209b7;
-            --accent-color: #f72585;
-            --light-color: #f8f9fa;
-            --dark-color: #212529;
-            --gray-color: #6c757d;
-            --light-gray: #e9ecef;
-            --border-radius: 12px;
-            --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            --primary-color: #2e7d32;
+            --primary-dark: #1b5e20;
+            --secondary-color: #0288d1;
+            --accent-color: #ff9800;
+            --light-color: #f5f5f5;
+            --dark-color: #212121;
+            --gray-color: #757575;
+            --light-gray: #e0e0e0;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --border-radius: 10px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
 
@@ -26,10 +29,10 @@
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--dark-color);
-            background-color: #fefefe;
+            background-color: #f9f9f9;
         }
 
         .container {
@@ -42,7 +45,7 @@
         /* Header */
         header {
             background-color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -52,7 +55,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
         .logo {
@@ -69,9 +72,21 @@
             color: var(--secondary-color);
         }
 
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+            font-weight: 400;
+        }
+
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 25px;
         }
 
         .nav-links a {
@@ -103,9 +118,10 @@
         .header-actions {
             display: flex;
             gap: 15px;
+            align-items: center;
         }
 
-        .btn {
+        .download-btn {
             padding: 10px 24px;
             border-radius: var(--border-radius);
             font-weight: 600;
@@ -113,27 +129,16 @@
             transition: var(--transition);
             border: none;
             font-size: 1rem;
-        }
-
-        .btn-primary {
             background-color: var(--primary-color);
             color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .btn-primary:hover {
+        .download-btn:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
         }
 
         .mobile-menu-btn {
@@ -147,29 +152,16 @@
 
         /* Hero Section */
         .hero {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f5f7ff 0%, #f0f2ff 100%);
+            padding: 80px 0;
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%234361ee" opacity="0.03"/></svg>') no-repeat;
-            background-size: cover;
         }
 
         .hero-content {
             display: flex;
             align-items: center;
             gap: 60px;
-            position: relative;
-            z-index: 1;
         }
 
         .hero-text {
@@ -177,7 +169,7 @@
         }
 
         .hero-text h1 {
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             line-height: 1.1;
             margin-bottom: 20px;
             color: var(--dark-color);
@@ -188,7 +180,7 @@
         }
 
         .hero-text p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--gray-color);
             margin-bottom: 30px;
             max-width: 600px;
@@ -208,6 +200,7 @@
 
         .features {
             display: flex;
+            flex-wrap: wrap;
             gap: 20px;
             margin-top: 40px;
         }
@@ -216,6 +209,11 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            background-color: white;
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            width: calc(50% - 10px);
         }
 
         .feature i {
@@ -223,202 +221,277 @@
             font-size: 1.5rem;
         }
 
-        /* Software Categories */
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+        }
+
         .section-title {
-            text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--dark-color);
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title h2 i {
+            color: var(--primary-color);
         }
 
         .section-title p {
             color: var(--gray-color);
             max-width: 700px;
-            margin: 0 auto;
         }
 
-        .categories {
-            padding: 100px 0;
-        }
-
-        .category-grid {
+        /* Apps Grid */
+        .apps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
+            margin-bottom: 60px;
         }
 
-        .category-card {
+        .app-card {
             background-color: white;
             border-radius: var(--border-radius);
-            padding: 35px 25px;
-            text-align: center;
+            overflow: hidden;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            border: 1px solid var(--light-gray);
         }
 
-        .category-card:hover {
+        .app-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .category-icon {
-            width: 80px;
-            height: 80px;
-            background-color: rgba(67, 97, 238, 0.1);
-            border-radius: 50%;
+        .app-header {
+            padding: 20px;
+            background-color: #f5f5f5;
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
+            gap: 15px;
         }
 
-        .category-icon i {
-            font-size: 2.2rem;
-            color: var(--primary-color);
-        }
-
-        .category-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .category-card p {
-            color: var(--gray-color);
-            margin-bottom: 20px;
-        }
-
-        .category-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Featured Software */
-        .featured-software {
-            padding: 100px 0;
-            background-color: var(--light-gray);
-        }
-
-        .software-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .software-card {
+        .app-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
             background-color: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .software-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .software-img {
-            height: 180px;
-            background-color: var(--light-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .software-img i {
-            font-size: 4rem;
+        .app-icon i {
+            font-size: 2rem;
             color: var(--primary-color);
         }
 
-        .software-info {
-            padding: 25px;
+        .app-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
         }
 
-        .software-info h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+        .app-info .app-version {
+            color: var(--gray-color);
+            font-size: 0.9rem;
         }
 
-        .software-info p {
+        .app-body {
+            padding: 20px;
+        }
+
+        .app-description {
             color: var(--gray-color);
             margin-bottom: 20px;
             font-size: 0.95rem;
         }
 
-        .software-meta {
+        .app-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .app-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .app-features li i {
+            color: var(--success-color);
+            font-size: 0.9rem;
+        }
+
+        .app-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            padding: 15px 20px;
+            background-color: #f9f9f9;
+            border-top: 1px solid var(--light-gray);
         }
 
-        .software-rating {
-            color: #ffc107;
+        .app-actions {
+            display: flex;
+            gap: 10px;
         }
 
-        .software-price {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--primary-color);
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .software-price.free {
-            color: #2ecc71;
-        }
-
-        /* CTA Section */
-        .cta {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        .btn-primary {
+            background-color: var(--primary-color);
             color: white;
-            text-align: center;
         }
 
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
         }
 
-        .cta p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
         }
 
-        .cta .btn {
+        .btn-secondary:hover {
+            background-color: #0277bd;
+        }
+
+        .app-size {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        /* How to Use */
+        .how-to-use {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step {
+            flex: 1;
             background-color: white;
-            color: var(--primary-color);
-            font-size: 1.1rem;
-            padding: 15px 40px;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .step p {
+            color: var(--gray-color);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            background-color: white;
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            background-color: white;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
         }
 
         /* Footer */
         footer {
             background-color: var(--dark-color);
             color: white;
-            padding: 80px 0 30px;
+            padding: 60px 0 30px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 60px;
+            gap: 40px;
+            margin-bottom: 50px;
         }
 
         .footer-column h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 25px;
             position: relative;
             padding-bottom: 10px;
@@ -469,20 +542,24 @@
             }
             
             .hero-text h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             
             .features {
                 justify-content: center;
             }
             
-            .hero::before {
-                width: 70%;
+            .feature {
+                width: 100%;
+            }
+            
+            .steps {
+                flex-direction: column;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
+            .nav-links, .header-actions {
                 display: none;
             }
             
@@ -490,39 +567,33 @@
                 display: block;
             }
             
-            .header-actions {
-                display: none;
-            }
-            
             .hero-text h1 {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
             
             .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .features {
-                flex-direction: column;
-                align-items: center;
+                font-size: 1.8rem;
             }
         }
 
         @media (max-width: 576px) {
             .hero-text h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
-            .btn {
-                padding: 10px 20px;
-            }
-            
-            .category-grid, .software-grid {
+            .apps-grid {
                 grid-template-columns: 1fr;
             }
             
-            .cta h2 {
-                font-size: 2rem;
+            .app-footer {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .app-actions {
+                width: 100%;
+                justify-content: space-between;
             }
         }
     </style>
@@ -532,21 +603,26 @@
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <i class="fas fa-cube"></i>
-                SoftWeb
+                <i class="fas fa-rocket"></i>
+                <div class="logo-text">
+                    LoadBrowser
+                    <span class="logo-subtitle">Browser Games Loader</span>
+                </div>
             </a>
             
             <nav class="nav-links">
                 <a href="#" class="active">Главная</a>
-                <a href="#categories">Категории</a>
-                <a href="#featured">Популярное</a>
-                <a href="#">Блог</a>
-                <a href="#">Поддержка</a>
+                <a href="#apps">Приложения</a>
+                <a href="#how-to-use">Как использовать</a>
+                <a href="#faq">FAQ</a>
+                <a href="#download">Скачать</a>
             </nav>
             
             <div class="header-actions">
-                <button class="btn btn-outline">Войти</button>
-                <button class="btn btn-primary">Регистрация</button>
+                <button class="download-btn">
+                    <i class="fas fa-download"></i>
+                    Скачать Loader
+                </button>
             </div>
             
             <button class="mobile-menu-btn">
@@ -559,192 +635,366 @@
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <h1>Лучшее <span>программное обеспечение</span> для всех ваших задач</h1>
-                <p>Откройте для себя тысячи приложений, утилит и инструментов для повышения производительности, творчества и развлечений. Все программы проверены на безопасность.</p>
+                <h1>LoadBrowser - <span>загрузчик для браузерных игр</span></h1>
+                <p>Уникальный инструмент для загрузки и запуска браузерных игр напрямую на вашем компьютере без необходимости использования браузера.</p>
                 
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">Начать поиск</button>
-                    <button class="btn btn-outline">Как это работает</button>
+                    <button class="download-btn" style="font-size: 1.1rem; padding: 12px 30px;">
+                        <i class="fas fa-download"></i>
+                        Скачать LoadBrowser
+                    </button>
                 </div>
                 
                 <div class="features">
                     <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>Быстрый запуск игр</span>
+                    </div>
+                    <div class="feature">
                         <i class="fas fa-shield-alt"></i>
-                        <span>100% безопасно</span>
+                        <span>Безопасность и защита</span>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-download"></i>
-                        <span>Быстрая загрузка</span>
+                        <i class="fas fa-gamepad"></i>
+                        <span>Поддержка множества игр</span>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-star"></i>
-                        <span>Проверенные отзывы</span>
+                        <i class="fas fa-sync-alt"></i>
+                        <span>Автообновления</span>
                     </div>
                 </div>
             </div>
             
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Программное обеспечение">
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="LoadBrowser интерфейс">
             </div>
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="categories" id="categories">
+    <!-- Main Content -->
+    <section class="main-content" id="apps">
         <div class="container">
             <div class="section-title">
-                <h2>Популярные категории</h2>
-                <p>Найдите необходимое программное обеспечение по категориям</p>
+                <h2><i class="fas fa-gamepad"></i> Доступные игры и приложения</h2>
+                <p>Список игр и приложений, которые можно загрузить и запустить через LoadBrowser</p>
             </div>
             
-            <div class="category-grid">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-desktop"></i>
+            <div class="apps-grid">
+                <!-- Steam App -->
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <i class="fab fa-steam"></i>
+                        </div>
+                        <div class="app-info">
+                            <h3>Steam Browser</h3>
+                            <div class="app-version">Версия 2.0</div>
+                        </div>
                     </div>
-                    <h3>Операционные системы</h3>
-                    <p>Дистрибутивы Linux, системные утилиты, драйверы и обновления</p>
-                    <a href="#" class="category-link">Смотреть <i class="fas fa-arrow-right"></i></a>
+                    <div class="app-body">
+                        <p class="app-description">Доступ к магазину Steam и библиотеке игр через оптимизированный браузер.</p>
+                        <ul class="app-features">
+                            <li><i class="fas fa-check"></i> Доступ к магазину Steam</li>
+                            <li><i class="fas fa-check"></i> Управление библиотекой игр</li>
+                            <li><i class="fas fa-check"></i> Чат с друзьями</li>
+                            <li><i class="fas fa-check"></i> Уведомления о скидках</li>
+                        </ul>
+                    </div>
+                    <div class="app-footer">
+                        <div class="app-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-download"></i> Скачать
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-info-circle"></i> Подробнее
+                            </button>
+                        </div>
+                        <div class="app-size">~150 MB</div>
+                    </div>
                 </div>
                 
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-briefcase"></i>
+                <!-- Brawl Stars App -->
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <i class="fas fa-fist-raised"></i>
+                        </div>
+                        <div class="app-info">
+                            <h3>Brawl Stars Browser</h3>
+                            <div class="app-version">Версия 1.5</div>
+                        </div>
                     </div>
-                    <h3>Бизнес и офис</h3>
-                    <p>Офисные пакеты, планировщики, CRM и бухгалтерские программы</p>
-                    <a href="#" class="category-link">Смотреть <i class="fas fa-arrow-right"></i></a>
+                    <div class="app-body">
+                        <p class="app-description">Запускайте Brawl Stars напрямую на компьютере без эмуляторов.</p>
+                        <ul class="app-features">
+                            <li><i class="fas fa-check"></i> Прямой запуск игры</li>
+                            <li><i class="fas fa-check"></i> Поддержка управления с клавиатуры</li>
+                            <li><i class="fas fa-check"></i> Стабильное соединение</li>
+                            <li><i class="fas fa-check"></i> Автообновления</li>
+                        </ul>
+                    </div>
+                    <div class="app-footer">
+                        <div class="app-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-download"></i> Скачать
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-info-circle"></i> Подробнее
+                            </button>
+                        </div>
+                        <div class="app-size">~220 MB</div>
+                    </div>
                 </div>
                 
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-paint-brush"></i>
+                <!-- Minecraft App -->
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="app-info">
+                            <h3>Minecraft Browser</h3>
+                            <div class="app-version">Версия 3.1</div>
+                        </div>
                     </div>
-                    <h3>Графика и дизайн</h3>
-                    <p>Редакторы изображений, 3D моделирование, CAD и векторная графика</p>
-                    <a href="#" class="category-link">Смотреть <i class="fas fa-arrow-right"></i></a>
+                    <div class="app-body">
+                        <p class="app-description">Запускайте браузерную версию Minecraft с улучшенной производительностью.</p>
+                        <ul class="app-features">
+                            <li><i class="fas fa-check"></i> Улучшенная графика</li>
+                            <li><i class="fas fa-check"></i> Поддержка модов</li>
+                            <li><i class="fas fa-check"></i> Стабильная работа</li>
+                            <li><i class="fas fa-check"></i> Быстрая загрузка миров</li>
+                        </ul>
+                    </div>
+                    <div class="app-footer">
+                        <div class="app-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-download"></i> Скачать
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-info-circle"></i> Подробнее
+                            </button>
+                        </div>
+                        <div class="app-size">~180 MB</div>
+                    </div>
                 </div>
                 
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-gamepad"></i>
+                <!-- WhatsApp App -->
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="app-info">
+                            <h3>WhatsApp Browser</h3>
+                            <div class="app-version">Версия 2.2</div>
+                        </div>
                     </div>
-                    <h3>Игры и развлечения</h3>
-                    <p>Видеоигры, эмуляторы, медиаплееры и стриминговые приложения</p>
-                    <a href="#" class="category-link">Смотреть <i class="fas fa-arrow-right"></i></a>
+                    <div class="app-body">
+                        <p class="app-description">Используйте WhatsApp на компьютере с расширенными функциями.</p>
+                        <ul class="app-features">
+                            <li><i class="fas fa-check"></i> Полная функциональность</li>
+                            <li><i class="fas fa-check"></i> Уведомления на рабочем столе</li>
+                            <li><i class="fas fa-check"></i> Поддержка медиафайлов</li>
+                            <li><i class="fas fa-check"></i> Голосовые сообщения</li>
+                        </ul>
+                    </div>
+                    <div class="app-footer">
+                        <div class="app-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-download"></i> Скачать
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-info-circle"></i> Подробнее
+                            </button>
+                        </div>
+                        <div class="app-size">~120 MB</div>
+                    </div>
                 </div>
                 
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-lock"></i>
+                <!-- PUBG App -->
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <div class="app-info">
+                            <h3>PUBG Browser</h3>
+                            <div class="app-version">Версия 1.8</div>
+                        </div>
                     </div>
-                    <h3>Безопасность</h3>
-                    <p>Антивирусы, файрволы, VPN и инструменты для шифрования</p>
-                    <a href="#" class="category-link">Смотреть <i class="fas fa-arrow-right"></i></a>
+                    <div class="app-body">
+                        <p class="app-description">Запускайте PUBG напрямую в браузере с оптимизацией под ПК.</p>
+                        <ul class="app-features">
+                            <li><i class="fas fa-check"></i> Оптимизация под ПК</li>
+                            <li><i class="fas fa-check"></i> Поддержка геймпадов</li>
+                            <li><i class="fas fa-check"></i> Низкая задержка</li>
+                            <li><i class="fas fa-check"></i> Автонастройка графики</li>
+                        </ul>
+                    </div>
+                    <div class="app-footer">
+                        <div class="app-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-download"></i> Скачать
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-info-circle"></i> Подробнее
+                            </button>
+                        </div>
+                        <div class="app-size">~250 MB</div>
+                    </div>
                 </div>
                 
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-code"></i>
+                <!-- Standoff 2 App -->
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <div class="app-info">
+                            <h3>Standoff 2 Browser</h3>
+                            <div class="app-version">Версия 1.3</div>
+                        </div>
                     </div>
-                    <h3>Разработка</h3>
-                    <p>IDE, компиляторы, системы контроля версий и отладчики</p>
-                    <a href="#" class="category-link">Смотреть <i class="fas fa-arrow-right"></i></a>
+                    <div class="app-body">
+                        <p class="app-description">Запускайте Standoff 2 на компьютере с улучшенным управлением.</p>
+                        <ul class="app-features">
+                            <li><i class="fas fa-check"></i> Настройки управления</li>
+                            <li><i class="fas fa-check"></i> Поддержка мыши и клавиатуры</li>
+                            <li><i class="fas fa-check"></i> Стабильный FPS</li>
+                            <li><i class="fas fa-check"></i> Быстрое подключение</li>
+                        </ul>
+                    </div>
+                    <div class="app-footer">
+                        <div class="app-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-download"></i> Скачать
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-info-circle"></i> Подробнее
+                            </button>
+                        </div>
+                        <div class="app-size">~200 MB</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Software Section -->
-    <section class="featured-software" id="featured">
+    <!-- How to Use Section -->
+    <section class="how-to-use" id="how-to-use">
         <div class="container">
             <div class="section-title">
-                <h2>Рекомендуемое ПО</h2>
-                <p>Популярные программы, выбранные нашей командой</p>
+                <h2><i class="fas fa-question-circle"></i> Как использовать LoadBrowser</h2>
+                <p>Простая инструкция по установке и использованию загрузчика</p>
             </div>
             
-            <div class="software-grid">
-                <div class="software-card">
-                    <div class="software-img">
-                        <i class="fab fa-figma"></i>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Скачайте LoadBrowser</h3>
+                    <p>Загрузите установщик LoadBrowser с нашего сайта. Файл имеет небольшой размер и устанавливается за несколько минут.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Установите программу</h3>
+                    <p>Запустите установщик и следуйте инструкциям на экране. Установка не требует специальных знаний.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Выберите приложение</h3>
+                    <p>Откройте LoadBrowser и выберите нужную игру или приложение из доступного списка.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Наслаждайтесь игрой</h3>
+                    <p>Загрузите и запустите выбранное приложение. Все игры оптимизированы для запуска на компьютере.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-comments"></i> Часто задаваемые вопросы</h2>
+                <p>Ответы на самые популярные вопросы о LoadBrowser</p>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>LoadBrowser безопасен для использования?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="software-info">
-                        <h3>Figma Design</h3>
-                        <p>Профессиональный инструмент для проектирования интерфейсов с совместной работой в реальном времени</p>
-                        
-                        <div class="software-meta">
-                            <div class="software-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span>4.7</span>
-                            </div>
-                            <div class="software-price free">Бесплатно</div>
-                        </div>
-                        
-                        <button class="btn btn-primary" style="width: 100%;">Скачать</button>
+                    <div class="faq-answer">
+                        <p>Да, LoadBrowser полностью безопасен. Все приложения проверяются на наличие вредоносного кода перед добавлением в каталог. Мы не собираем и не передаем личные данные пользователей.</p>
                     </div>
                 </div>
                 
-                <div class="software-card">
-                    <div class="software-img">
-                        <i class="fas fa-video"></i>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Требуется ли для работы стабильное интернет-соединение?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="software-info">
-                        <h3>VideoStudio Pro</h3>
-                        <p>Мощный видеоредактор с поддержкой 4K и обширной библиотекой эффектов</p>
-                        
-                        <div class="software-meta">
-                            <div class="software-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span>4.2</span>
-                            </div>
-                            <div class="software-price">$49.99</div>
-                        </div>
-                        
-                        <button class="btn btn-primary" style="width: 100%;">Скачать</button>
+                    <div class="faq-answer">
+                        <p>Да, для загрузки приложений и игр требуется подключение к интернету. После загрузки некоторые игры могут работать в офлайн-режиме, но для многопользовательских игр необходимо стабильное соединение.</p>
                     </div>
                 </div>
                 
-                <div class="software-card">
-                    <div class="software-img">
-                        <i class="fas fa-file-archive"></i>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Какие системные требования у LoadBrowser?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="software-info">
-                        <h3>WinRAR Ultimate</h3>
-                        <p>Архиватор файлов с поддержкой всех популярных форматов и высокой степенью сжатия</p>
-                        
-                        <div class="software-meta">
-                            <div class="software-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span>5.0</span>
-                            </div>
-                            <div class="software-price">$29.99</div>
-                        </div>
-                        
-                        <button class="btn btn-primary" style="width: 100%;">Скачать</button>
+                    <div class="faq-answer">
+                        <p>LoadBrowser работает на Windows 7 и выше, требует не менее 2 ГБ оперативной памяти и 500 МБ свободного места на диске. Для некоторых игр могут потребоваться дополнительные ресурсы.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Можно ли предлагать свои игры для добавления в каталог?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, мы принимаем предложения по добавлению новых игр и приложений. Вы можете отправить запрос через форму обратной связи или связаться с нами по электронной почте.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Бесплатен ли LoadBrowser?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, LoadBrowser полностью бесплатен. Мы не берем плату за использование загрузчика. Некоторые игры могут иметь встроенные покупки, но сам LoadBrowser предоставляется бесплатно.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
+    <!-- Download Section -->
+    <section class="how-to-use" id="download" style="background-color: #e8f5e9;">
         <div class="container">
-            <h2>Начните использовать лучшее ПО уже сегодня</h2>
-            <p>Присоединяйтесь к миллионам пользователей, которые доверяют SoftWeb для поиска и загрузки безопасного программного обеспечения</p>
-            <button class="btn">Создать аккаунт бесплатно</button>
+            <div class="section-title" style="text-align: center;">
+                <h2><i class="fas fa-download"></i> Скачайте LoadBrowser сейчас</h2>
+                <p>Начните использовать LoadBrowser уже сегодня. Это бесплатно и безопасно!</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="download-btn" style="font-size: 1.2rem; padding: 15px 40px;">
+                    <i class="fas fa-download"></i>
+                    Скачать LoadBrowser v2.1
+                </button>
+                <p style="margin-top: 20px; color: var(--gray-color);">Размер установщика: ~45 MB</p>
+                <p style="margin-top: 10px; color: var(--gray-color);">Поддерживаемые ОС: Windows 7, 8, 10, 11</p>
+            </div>
         </div>
     </section>
 
@@ -753,35 +1003,35 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>SoftWeb</h3>
-                    <p>Крупнейшая библиотека программного обеспечения с 2010 года. Все программы проверяются на безопасность.</p>
+                    <h3>LoadBrowser</h3>
+                    <p>Уникальный загрузчик для браузерных игр, который позволяет запускать игры напрямую на компьютере без использования браузера.</p>
                     <div style="margin-top: 20px; display: flex; gap: 15px;">
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-github"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-telegram"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-discord"></i></a>
                         <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Категории</h3>
+                    <h3>Приложения</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Операционные системы</a></li>
-                        <li><a href="#">Бизнес и офис</a></li>
-                        <li><a href="#">Графика и дизайн</a></li>
-                        <li><a href="#">Игры и развлечения</a></li>
-                        <li><a href="#">Безопасность</a></li>
+                        <li><a href="#">Steam Browser</a></li>
+                        <li><a href="#">Brawl Stars Browser</a></li>
+                        <li><a href="#">Minecraft Browser</a></li>
+                        <li><a href="#">WhatsApp Browser</a></li>
+                        <li><a href="#">Все приложения</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Компания</h3>
+                    <h3>Помощь</h3>
                     <ul class="footer-links">
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Карьера</a></li>
-                        <li><a href="#">Партнеры</a></li>
-                        <li><a href="#">Пресса</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Инструкция по установке</a></li>
+                        <li><a href="#">Решение проблем</a></li>
+                        <li><a href="#">Системные требования</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                        <li><a href="#">Сообщить об ошибке</a></li>
                     </ul>
                 </div>
                 
@@ -790,15 +1040,15 @@
                     <ul class="footer-links">
                         <li><a href="#">Условия использования</a></li>
                         <li><a href="#">Политика конфиденциальности</a></li>
-                        <li><a href="#">Политика возврата</a></li>
-                        <li><a href="#">Правила загрузки</a></li>
-                        <li><a href="#">DMCA</a></li>
+                        <li><a href="#">Отказ от ответственности</a></li>
+                        <li><a href="#">Лицензионное соглашение</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 SoftWeb. Все права защищены. Логотипы и товарные знаки являются собственностью соответствующих владельцев.</p>
+                <p>&copy; 2023 LoadBrowser. Все права защищены. LoadBrowser не аффилирован с компаниями, чьи игры представлены в каталоге.</p>
+                <p style="margin-top: 10px;">Все игры являются собственностью их соответствующих правообладателей.</p>
             </div>
         </div>
     </footer>
@@ -807,10 +1057,15 @@
         // Мобильное меню
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
+        const headerActions = document.querySelector('.header-actions');
         
         mobileMenuBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
             if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+                headerActions.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                headerActions.style.display = 'flex';
                 navLinks.style.flexDirection = 'column';
                 navLinks.style.position = 'absolute';
                 navLinks.style.top = '100%';
@@ -820,11 +1075,35 @@
                 navLinks.style.padding = '20px';
                 navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
                 navLinks.style.gap = '15px';
+                
+                headerActions.style.flexDirection = 'column';
+                headerActions.style.position = 'absolute';
+                headerActions.style.top = 'calc(100% + 180px)';
+                headerActions.style.left = '0';
+                headerActions.style.right = '0';
+                headerActions.style.backgroundColor = 'white';
+                headerActions.style.padding = '20px';
+                headerActions.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
             }
         });
         
-        // Обновление года в футере
-        document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} SoftWeb. Все права защищены. Логотипы и товарные знаки являются собственностью соответствующих владельцев.`;
+        // FAQ аккордеон
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Закрываем все открытые элементы
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Переключаем текущий элемент
+                item.classList.toggle('active');
+            });
+        });
         
         // Плавная прокрутка
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -844,6 +1123,7 @@
                     // Закрытие мобильного меню
                     if(window.innerWidth <= 768) {
                         navLinks.style.display = 'none';
+                        headerActions.style.display = 'none';
                     }
                 }
             });
@@ -865,11 +1145,27 @@
         }, observerOptions);
         
         // Применяем анимацию к карточкам
-        document.querySelectorAll('.category-card, .software-card').forEach(card => {
+        document.querySelectorAll('.app-card, .step').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(card);
+        });
+        
+        // Обновление года в футере
+        document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} LoadBrowser. Все права защищены. LoadBrowser не аффилирован с компаниями, чьи игры представлены в каталоге.`;
+        
+        // Кнопки скачивания
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const appName = this.closest('.app-card').querySelector('h3').textContent;
+                alert(`Начата загрузка: ${appName}\n\nЗагрузка начнется через несколько секунд. Если загрузка не началась автоматически, проверьте настройки браузера.`);
+            });
+        });
+        
+        // Кнопка скачивания главного загрузчика
+        document.querySelector('.download-btn').addEventListener('click', function() {
+            alert('Начата загрузка LoadBrowser v2.1\n\nРазмер файла: ~45 MB\nЗагрузка начнется через несколько секунд.');
         });
     </script>
 </body>
