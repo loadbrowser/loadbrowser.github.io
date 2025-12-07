@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brawl Stars Browser - LoadBrowser</title>
+    <title>Яндекс.Браузер - Загрузка и установка</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2e7d32;
-            --primary-dark: #1b5e20;
-            --secondary-color: #0288d1;
-            --accent-color: #ff9800;
+            --primary-color: #FF2E2E;
+            --primary-dark: #CC0000;
+            --secondary-color: #FFCC00;
+            --accent-color: #3366FF;
             --light-color: #f5f5f5;
             --dark-color: #212121;
             --gray-color: #757575;
@@ -187,7 +187,7 @@
         /* App Detail Header */
         .app-detail-header {
             padding: 40px 0;
-            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            background: linear-gradient(135deg, #FFF5F5 0%, #FFEBEE 100%);
         }
 
         .app-header-content {
@@ -200,16 +200,21 @@
             width: 120px;
             height: 120px;
             border-radius: 20px;
-            background: linear-gradient(135deg, #ff9800, #ff5722);
+            background: linear-gradient(135deg, #FF2E2E, #FF6666);
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
         }
 
-        .app-icon-large i {
-            font-size: 3.5rem;
+        .app-icon-large::before {
+            content: 'Я';
+            font-size: 4rem;
+            font-weight: 700;
             color: white;
+            font-family: 'Arial', sans-serif;
         }
 
         .app-header-info {
@@ -220,6 +225,10 @@
             font-size: 2.5rem;
             margin-bottom: 10px;
             color: var(--dark-color);
+        }
+
+        .app-title span {
+            color: var(--primary-color);
         }
 
         .app-meta {
@@ -255,6 +264,7 @@
             display: flex;
             gap: 15px;
             margin-top: 25px;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -289,6 +299,15 @@
             background-color: #f5f5f5;
         }
 
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background-color: #2952CC;
+        }
+
         /* Main Content */
         .main-content {
             display: grid;
@@ -317,6 +336,14 @@
             margin-bottom: 30px;
             line-height: 1.8;
             color: var(--gray-color);
+        }
+
+        .highlight {
+            background-color: #FFF5F5;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 25px 0;
         }
 
         .app-features {
@@ -431,7 +458,7 @@
         }
 
         .related-app:hover {
-            background-color: #e8f5e9;
+            background-color: #FFF5F5;
             transform: translateX(5px);
         }
 
@@ -439,7 +466,6 @@
             width: 50px;
             height: 50px;
             border-radius: 10px;
-            background-color: var(--primary-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -488,6 +514,47 @@
 
         .download-info-item h4 i {
             color: var(--primary-color);
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .comparison-table th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+            width: 30%;
+        }
+
+        .comparison-table .feature-name {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .comparison-table .yandex-check {
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        .comparison-table .other-check {
+            color: var(--gray-color);
         }
 
         /* How to Install */
@@ -706,6 +773,11 @@
             .screenshots-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
         }
 
         @media (max-width: 576px) {
@@ -723,8 +795,8 @@
                 height: 100px;
             }
             
-            .app-icon-large i {
-                font-size: 2.5rem;
+            .app-icon-large::before {
+                font-size: 3rem;
             }
         }
     </style>
@@ -734,25 +806,25 @@
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <i class="fas fa-rocket"></i>
+                <i class="fas fa-download"></i>
                 <div class="logo-text">
-                    LoadBrowser
-                    <span class="logo-subtitle">Browser Games Loader</span>
+                    Загрузки
+                    <span class="logo-subtitle">Безопасные программы</span>
                 </div>
             </a>
             
             <nav class="nav-links">
                 <a href="index.html">Главная</a>
-                <a href="index.html#apps">Приложения</a>
-                <a href="index.html#how-to-use">Как использовать</a>
-                <a href="index.html#faq">FAQ</a>
-                <a href="index.html#download">Скачать</a>
+                <a href="browsers.html">Браузеры</a>
+                <a href="games.html">Игры</a>
+                <a href="software.html">Программы</a>
+                <a href="tools.html">Утилиты</a>
             </nav>
             
             <div class="header-actions">
                 <button class="download-btn">
-                    <i class="fas fa-download"></i>
-                    Скачать Loader
+                    <i class="fas fa-search"></i>
+                    Поиск
                 </button>
             </div>
             
@@ -767,9 +839,9 @@
         <div class="container breadcrumbs-container">
             <a href="index.html"><i class="fas fa-home"></i> Главная</a>
             <i class="fas fa-chevron-right"></i>
-            <a href="index.html#apps">Приложения</a>
+            <a href="browsers.html">Браузеры</a>
             <i class="fas fa-chevron-right"></i>
-            <span>Brawl Stars Browser</span>
+            <span>Яндекс.Браузер</span>
         </div>
     </section>
 
@@ -777,30 +849,31 @@
     <section class="app-detail-header">
         <div class="container">
             <div class="app-header-content">
-                <div class="app-icon-large">
-                    <i class="fas fa-fist-raised"></i>
-                </div>
+                <div class="app-icon-large"></div>
                 <div class="app-header-info">
-                    <h1 class="app-title">Brawl Stars Browser</h1>
+                    <h1 class="app-title"><span>Яндекс.Браузер</span> — быстрый и умный браузер</h1>
                     <div class="app-meta">
-                        <span class="app-version">Версия 1.5</span>
+                        <span class="app-version">Версия 23.11</span>
                         <div class="app-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
-                            <span>4.7</span>
+                            <span>4.6 (12,347 оценок)</span>
                         </div>
-                        <span class="app-size">Размер: ~220 MB</span>
+                        <span class="app-size">Размер: 85.4 MB</span>
                     </div>
-                    <p>Запускайте Brawl Stars напрямую на компьютере без эмуляторов с улучшенной графикой и управлением.</p>
+                    <p>Быстрый и безопасный браузер от Яндекса с интегрированными сервисами и уникальной технологией Турбо для ускорения загрузки страниц.</p>
                     <div class="app-header-actions">
-                        <button class="btn btn-primary">
-                            <i class="fas fa-download"></i> Скачать сейчас
+                        <button class="btn btn-primary" id="download-windows">
+                            <i class="fas fa-download"></i> Скачать для Windows
                         </button>
-                        <button class="btn btn-secondary">
-                            <i class="fas fa-play-circle"></i> Смотреть геймплей
+                        <button class="btn btn-accent" id="download-linux">
+                            <i class="fab fa-linux"></i> Версия для Linux
+                        </button>
+                        <button class="btn btn-secondary" id="download-mac">
+                            <i class="fab fa-apple"></i> Версия для Mac
                         </button>
                     </div>
                 </div>
@@ -812,23 +885,28 @@
     <div class="container main-content">
         <!-- Left Column: App Details -->
         <div class="app-details">
-            <h2 class="section-title">Описание приложения</h2>
+            <h2 class="section-title">О Яндекс.Браузере</h2>
             <div class="app-description">
-                <p>Brawl Stars Browser - это специальная версия популярной игры Brawl Stars, оптимизированная для запуска на компьютере через LoadBrowser. Приложение позволяет играть в Brawl Stars без использования эмуляторов Android, что обеспечивает лучшую производительность и стабильность.</p>
-                <p>Игра адаптирована для управления с клавиатуры и мыши, что дает преимущество в точности стрельбы и реакции. Все режимы игры доступны, включая командные сражения, стычки и особые события.</p>
+                <p><strong>Яндекс.Браузер</strong> — это современный веб-браузер, разработанный компанией Яндекс на основе движка Chromium с интеграцией сервисов Яндекса. Браузер отличается высокой скоростью работы, встроенной защитой от вредоносных сайтов и уникальными функциями, такими как Турбо-режим, Умная строка и встроенный переводчик.</p>
+                
+                <div class="highlight">
+                    <p><strong>Преимущества Яндекс.Браузера:</strong> Браузер автоматически синхронизирует закладки, историю и пароли между устройствами, поддерживает установку расширений из Chrome Web Store и имеет встроенный блокировщик рекламы. Оптимизирован для работы в российском интернет-пространстве.</p>
+                </div>
+                
+                <p>Яндекс.Браузер предлагает уникальные возможности для пользователей, такие как "Табло" с персонализированными сайтами, режим "Турбо" для экономии трафика и ускорения загрузки, а также глубокую интеграцию с сервисами Яндекс: Поиск, Почта, Карты, Переводчик и другими.</p>
             </div>
             
             <div class="app-features">
-                <h2 class="section-title">Основные особенности</h2>
+                <h2 class="section-title">Ключевые возможности</h2>
                 <ul>
-                    <li><i class="fas fa-check"></i> Прямой запуск без эмуляторов</li>
-                    <li><i class="fas fa-check"></i> Настраиваемое управление с клавиатуры</li>
-                    <li><i class="fas fa-check"></i> Улучшенная графика и производительность</li>
-                    <li><i class="fas fa-check"></i> Поддержка геймпадов Xbox и PS4</li>
-                    <li><i class="fas fa-check"></i> Автообновления до последней версии</li>
-                    <li><i class="fas fa-check"></i> Быстрое подключение к серверам</li>
-                    <li><i class="fas fa-check"></i> Сохранение прогресса в облаке</li>
-                    <li><i class="fas fa-check"></i> Поддержка внутриигровых покупок</li>
+                    <li><i class="fas fa-check"></i> <strong>Технология Турбо</strong> — ускорение загрузки страниц при медленном интернете</li>
+                    <li><i class="fas fa-check"></i> <strong>Встроенный переводчик</strong> — мгновенный перевод страниц на русский язык</li>
+                    <li><i class="fas fa-check"></i> <strong>Защита Active Protect</strong> — блокировка опасных сайтов и файлов</li>
+                    <li><i class="fas fa-check"></i> <strong>Умная строка</strong> — поиск, адреса и команды в одной строке</li>
+                    <li><i class="fas fa-check"></i> <strong>Режим "Инкогнито"</strong> — приватный просмотр без сохранения истории</li>
+                    <li><i class="fas fa-check"></i> <strong>Синхронизация</strong> — закладки, пароли, история на всех устройствах</li>
+                    <li><i class="fas fa-check"></i> <strong>Экономия трафика</strong> — сжатие данных до 50% в Турбо-режиме</li>
+                    <li><i class="fas fa-check"></i> <strong>Поддержка расширений</strong> — установка из Chrome Web Store</li>
                 </ul>
             </div>
             
@@ -845,49 +923,49 @@
                     <tbody>
                         <tr>
                             <td>Операционная система</td>
-                            <td>Windows 7</td>
-                            <td>Windows 10/11</td>
+                            <td>Windows 7 / macOS 10.12 / Ubuntu 16.04</td>
+                            <td>Windows 10/11 / macOS 11+ / Ubuntu 20.04+</td>
                         </tr>
                         <tr>
                             <td>Процессор</td>
+                            <td>Intel Pentium 4 или аналог</td>
                             <td>Intel Core i3 или аналог</td>
-                            <td>Intel Core i5 или аналог</td>
                         </tr>
                         <tr>
                             <td>Оперативная память</td>
+                            <td>1 ГБ</td>
                             <td>4 ГБ</td>
-                            <td>8 ГБ</td>
                         </tr>
                         <tr>
                             <td>Видеокарта</td>
-                            <td>Intel HD Graphics 4000</td>
-                            <td>NVIDIA GTX 660 / AMD Radeon HD 7850</td>
+                            <td>С поддержкой DirectX 9 (Windows)</td>
+                            <td>С поддержкой DirectX 11 (Windows)</td>
                         </tr>
                         <tr>
                             <td>Место на диске</td>
+                            <td>200 МБ</td>
                             <td>500 МБ</td>
-                            <td>1 ГБ</td>
                         </tr>
                         <tr>
                             <td>Интернет</td>
-                            <td>5 Мбит/с</td>
-                            <td>10 Мбит/с</td>
+                            <td>Для установки и обновлений</td>
+                            <td>Широкополосный доступ</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             
             <div class="app-screenshots">
-                <h2 class="section-title">Скриншоты</h2>
+                <h2 class="section-title">Скриншоты интерфейса</h2>
                 <div class="screenshots-grid">
                     <div class="screenshot">
-                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Скриншот Brawl Stars 1">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Интерфейс Яндекс.Браузера">
                     </div>
                     <div class="screenshot">
-                        <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w-600&q=80" alt="Скриншот Brawl Stars 2">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Панель быстрого доступа">
                     </div>
                     <div class="screenshot">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Скриншот Brawl Stars 3">
+                        <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Настройки браузера">
                     </div>
                 </div>
             </div>
@@ -897,45 +975,45 @@
         <div class="sidebar">
             <!-- Related Apps -->
             <div class="related-apps">
-                <h3 class="section-title">Похожие приложения</h3>
+                <h3 class="section-title">Другие браузеры</h3>
                 <div class="related-apps-list">
-                    <a href="steam-browser.html" class="related-app">
-                        <div class="related-app-icon" style="background-color: #171a21;">
-                            <i class="fab fa-steam"></i>
+                    <a href="chrome.html" class="related-app">
+                        <div class="related-app-icon" style="background-color: #4285F4;">
+                            <i class="fab fa-chrome"></i>
                         </div>
                         <div class="related-app-info">
-                            <h4>Steam Browser</h4>
-                            <p>Доступ к магазину Steam и библиотеке</p>
+                            <h4>Google Chrome</h4>
+                            <p>Самый популярный браузер</p>
                         </div>
                     </a>
                     
-                    <a href="minecraft-browser.html" class="related-app">
-                        <div class="related-app-icon" style="background-color: #6caa3f;">
-                            <i class="fas fa-cube"></i>
+                    <a href="firefox.html" class="related-app">
+                        <div class="related-app-icon" style="background-color: #FF7139;">
+                            <i class="fab fa-firefox"></i>
                         </div>
                         <div class="related-app-info">
-                            <h4>Minecraft Browser</h4>
-                            <p>Браузерная версия Minecraft</p>
+                            <h4>Mozilla Firefox</h4>
+                            <p>Браузер с открытым исходным кодом</p>
                         </div>
                     </a>
                     
-                    <a href="pubg-browser.html" class="related-app">
-                        <div class="related-app-icon" style="background-color: #f7a41d;">
-                            <i class="fas fa-crosshairs"></i>
+                    <a href="opera.html" class="related-app">
+                        <div class="related-app-icon" style="background-color: #FF1B2D;">
+                            <i class="fab fa-opera"></i>
                         </div>
                         <div class="related-app-info">
-                            <h4>PUBG Browser</h4>
-                            <p>Запуск PUBG на компьютере</p>
+                            <h4>Opera Browser</h4>
+                            <p>С встроенным VPN и блокировщиком рекламы</p>
                         </div>
                     </a>
                     
-                    <a href="standoff2-browser.html" class="related-app">
-                        <div class="related-app-icon" style="background-color: #6c5ce7;">
-                            <i class="fas fa-user-secret"></i>
+                    <a href="edge.html" class="related-app">
+                        <div class="related-app-icon" style="background-color: #0078D7;">
+                            <i class="fab fa-edge"></i>
                         </div>
                         <div class="related-app-info">
-                            <h4>Standoff 2 Browser</h4>
-                            <p>Шутер от первого лица</p>
+                            <h4>Microsoft Edge</h4>
+                            <p>Браузер на основе Chromium от Microsoft</p>
                         </div>
                     </a>
                 </div>
@@ -943,58 +1021,140 @@
             
             <!-- Download Info -->
             <div class="download-info">
-                <h3 class="section-title">Информация для скачивания</h3>
+                <h3 class="section-title">Информация о загрузке</h3>
                 <div class="download-info-item">
                     <h4><i class="fas fa-download"></i> Скачиваний</h4>
-                    <p>Более 150,000 загрузок</p>
+                    <p>Более 500,000 загрузок</p>
                 </div>
                 <div class="download-info-item">
                     <h4><i class="fas fa-calendar-alt"></i> Последнее обновление</h4>
-                    <p>15 ноября 2023</p>
+                    <p>20 ноября 2023</p>
                 </div>
                 <div class="download-info-item">
                     <h4><i class="fas fa-user-check"></i> Разработчик</h4>
-                    <p>Supercell / LoadBrowser Team</p>
+                    <p>Яндекс</p>
                 </div>
                 <div class="download-info-item">
-                    <h4><i class="fas fa-language"></i> Языки</h4>
-                    <p>Русский, English, Español, Français</p>
+                    <h4><i class="fas fa-language"></i> Языки интерфейса</h4>
+                    <p>Русский, English, Türkçe, Українська</p>
+                </div>
+                <div class="download-info-item">
+                    <h4><i class="fas fa-shield-alt"></i> Безопасность</h4>
+                    <p>Проверено на вирусы</p>
+                </div>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="download-info">
+                <h3 class="section-title">Быстрая статистика</h3>
+                <div class="download-info-item">
+                    <h4><i class="fas fa-bolt"></i> Скорость загрузки</h4>
+                    <p>На 15% быстрее Chrome</p>
+                </div>
+                <div class="download-info-item">
+                    <h4><i class="fas fa-memory"></i> Потребление памяти</h4>
+                    <p>На 20% меньше чем Chrome</p>
+                </div>
+                <div class="download-info-item">
+                    <h4><i class="fas fa-mobile-alt"></i> Мобильная версия</h4>
+                    <p>Доступна для iOS и Android</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="section-title">Сравнение с другими браузерами</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Функция</th>
+                        <th>Яндекс.Браузер</th>
+                        <th>Google Chrome</th>
+                        <th>Mozilla Firefox</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Встроенный переводчик</td>
+                        <td class="yandex-check">✓ Встроен</td>
+                        <td class="other-check">Требует расширение</td>
+                        <td class="other-check">Требует расширение</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Режим Турбо</td>
+                        <td class="yandex-check">✓ Есть</td>
+                        <td class="other-check">Нет</td>
+                        <td class="other-check">Нет</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Защита от вредоносных сайтов</td>
+                        <td class="yandex-check">✓ Active Protect</td>
+                        <td class="other-check">✓ Safe Browsing</td>
+                        <td class="other-check">✓ Защита</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Встроенный блокировщик рекламы</td>
+                        <td class="yandex-check">✓ Есть</td>
+                        <td class="other-check">Требует расширение</td>
+                        <td class="other-check">Требует расширение</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Экономия трафика</td>
+                        <td class="yandex-check">✓ До 50%</td>
+                        <td class="other-check">Ограниченная</td>
+                        <td class="other-check">Ограниченная</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Синхронизация с мобильными устройствами</td>
+                        <td class="yandex-check">✓ Полная</td>
+                        <td class="other-check">✓ Полная</td>
+                        <td class="other-check">✓ Полная</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Поддержка расширений Chrome</td>
+                        <td class="yandex-check">✓ Полная</td>
+                        <td class="other-check">✓ Полная</td>
+                        <td class="other-check">Частичная</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
     <!-- How to Install -->
     <section class="how-to-install">
         <div class="container">
-            <h2 class="section-title">Как установить Brawl Stars Browser</h2>
+            <h2 class="section-title">Как установить Яндекс.Браузер</h2>
             <div class="install-steps">
                 <div class="install-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h4>Скачайте LoadBrowser</h4>
-                        <p>Если у вас еще не установлен LoadBrowser, скачайте его с <a href="index.html#download">главной страницы</a>. Установите программу, следуя инструкциям.</p>
+                        <h4>Скачайте установщик</h4>
+                        <p>Нажмите кнопку "Скачать для Windows" выше. Установщик Яндекс.Браузера будет загружен на ваш компьютер (файл размером ~85 MB).</p>
                     </div>
                 </div>
                 <div class="install-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h4>Запустите LoadBrowser</h4>
-                        <p>Откройте установленный LoadBrowser. В главном меню найдите Brawl Stars Browser в списке доступных приложений или воспользуйтесь поиском.</p>
+                        <h4>Запустите установщик</h4>
+                        <p>Найдите загруженный файл (обычно в папке "Загрузки") и запустите его двойным кликом. Разрешите программе вносить изменения на вашем устройстве.</p>
                     </div>
                 </div>
                 <div class="install-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h4>Установите приложение</h4>
-                        <p>Нажмите кнопку "Установить" на странице Brawl Stars Browser. Дождитесь завершения загрузки и установки приложения.</p>
+                        <h4>Следуйте инструкциям установки</h4>
+                        <p>Мастер установки предложит вам выбрать язык, принять лицензионное соглашение и указать папку для установки. Рекомендуем оставить параметры по умолчанию.</p>
                     </div>
                 </div>
                 <div class="install-step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h4>Настройте управление</h4>
-                        <p>После установки зайдите в настройки управления и настройте клавиши под себя. Рекомендуемые настройки уже установлены по умолчанию.</p>
+                        <h4>Завершите установку и запустите браузер</h4>
+                        <p>После завершения установки Яндекс.Браузер автоматически запустится. Вы можете войти в аккаунт Яндекс для синхронизации данных или начать использование без входа.</p>
                     </div>
                 </div>
             </div>
@@ -1007,7 +1167,7 @@
             <h2 class="section-title">Отзывы пользователей</h2>
             
             <div class="comment-form">
-                <textarea placeholder="Оставьте ваш отзыв о Brawl Stars Browser..."></textarea>
+                <textarea placeholder="Оставьте ваш отзыв о Яндекс.Браузере..."></textarea>
                 <button type="submit">Отправить отзыв</button>
             </div>
             
@@ -1016,9 +1176,9 @@
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="comment-content">
-                    <h4>Алексей Петров</h4>
+                    <h4>Анна Семенова</h4>
                     <div class="comment-date">5 ноября 2023</div>
-                    <p>Отличная версия игры! Управление с клавиатуры и мыши намного удобнее, чем на телефоне. FPS стабильный, никаких лагов. Рекомендую!</p>
+                    <p>Пользуюсь Яндекс.Браузером уже больше года. Очень нравится встроенный переводчик - не нужно устанавливать дополнительные расширения. Турбо-режим реально помогает при медленном интернете.</p>
                 </div>
             </div>
             
@@ -1027,9 +1187,9 @@
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="comment-content">
-                    <h4>Мария Смирнова</h4>
+                    <h4>Дмитрий Волков</h4>
                     <div class="comment-date">28 октября 2023</div>
-                    <p>Играю уже неделю через LoadBrowser. Очень удобно, что не нужно использовать эмулятор. Графика лучше, чем на телефоне. Единственное - иногда бывают проблемы с подключением к серверам.</p>
+                    <p>Перешел с Chrome на Яндекс.Браузер полгода назад. Заметил, что работает быстрее, особенно на старом компьютере. Встроенный блокировщик рекламы тоже радует - страницы загружаются чище.</p>
                 </div>
             </div>
             
@@ -1038,9 +1198,9 @@
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="comment-content">
-                    <h4>Дмитрий Иванов</h4>
+                    <h4>Ольга Петрова</h4>
                     <div class="comment-date">15 октября 2023</div>
-                    <p>Отличная работа разработчиков! Все работает стабильно, управление настраивается под себя. Хотелось бы больше настроек графики для слабых компьютеров.</p>
+                    <p>Хороший браузер, но есть небольшой недостаток - иногда подвисает при открытии множества вкладок. В целом довольна, особенно интеграцией с сервисами Яндекса.</p>
                 </div>
             </div>
         </div>
@@ -1051,13 +1211,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>LoadBrowser</h3>
-                    <p>Уникальный загрузчик для браузерных игр, который позволяет запускать игры напрямую на компьютере без использования браузера.</p>
+                    <h3>Загрузки</h3>
+                    <p>Каталог проверенных программ для Windows, Linux и macOS. Все файлы проверены на вирусы и безопасность.</p>
                     <div style="margin-top: 20px; display: flex; gap: 15px;">
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-github"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-vk"></i></a>
                         <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-telegram"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-discord"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 
@@ -1065,38 +1224,38 @@
                     <h3>Навигация</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Главная страница</a></li>
-                        <li><a href="index.html#apps">Все приложения</a></li>
-                        <li><a href="index.html#how-to-use">Инструкция</a></li>
-                        <li><a href="index.html#faq">Частые вопросы</a></li>
-                        <li><a href="index.html#download">Скачать LoadBrowser</a></li>
+                        <li><a href="browsers.html">Браузеры</a></li>
+                        <li><a href="games.html">Игры</a></li>
+                        <li><a href="software.html">Программы</a></li>
+                        <li><a href="tools.html">Утилиты</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Популярные игры</h3>
+                    <h3>Популярные программы</h3>
                     <ul class="footer-links">
-                        <li><a href="brawl-stars-browser.html">Brawl Stars Browser</a></li>
-                        <li><a href="steam-browser.html">Steam Browser</a></li>
-                        <li><a href="minecraft-browser.html">Minecraft Browser</a></li>
-                        <li><a href="pubg-browser.html">PUBG Browser</a></li>
-                        <li><a href="whatsapp-browser.html">WhatsApp Browser</a></li>
+                        <li><a href="yandex-browser.html">Яндекс.Браузер</a></li>
+                        <li><a href="chrome.html">Google Chrome</a></li>
+                        <li><a href="firefox.html">Mozilla Firefox</a></li>
+                        <li><a href="vivaldi.html">Vivaldi Browser</a></li>
+                        <li><a href="opera.html">Opera Browser</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Помощь и поддержка</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Техническая поддержка</a></li>
-                        <li><a href="#">Сообщить об ошибке</a></li>
-                        <li><a href="#">Форум</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="faq.html">Частые вопросы</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                        <li><a href="policy.html">Политика безопасности</a></li>
+                        <li><a href="dmca.html">DMCA</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 LoadBrowser. Все права защищены. LoadBrowser не аффилирован с компаниями, чьи игры представлены в каталоге.</p>
-                <p style="margin-top: 10px;">Все игры являются собственностью их соответствующих правообладателей.</p>
+                <p>&copy; 2023 Загрузки. Все права защищены. Все программы являются собственностью их разработчиков.</p>
+                <p style="margin-top: 10px;">Сайт предоставляет ссылки для загрузки официальных версий программ.</p>
             </div>
         </div>
     </footer>
@@ -1136,14 +1295,20 @@
         });
         
         // Кнопки скачивания
-        document.querySelectorAll('.btn-primary').forEach(btn => {
-            btn.addEventListener('click', function() {
-                alert('Начата загрузка Brawl Stars Browser v1.5\n\nРазмер файла: ~220 MB\nЗагрузка начнется через несколько секунд.');
-            });
+        document.getElementById('download-windows').addEventListener('click', function() {
+            alert('Загрузка Яндекс.Браузера для Windows начата!\n\nФайл: yandex_browser_setup.exe\nРазмер: 85.4 MB\n\nФайл будет сохранен в папке "Загрузки".');
+        });
+        
+        document.getElementById('download-linux').addEventListener('click', function() {
+            alert('Загрузка Яндекс.Браузера для Linux начата!\n\nФайл: yandex-browser_current_amd64.deb\nРазмер: 87.2 MB\n\nВыберите версию для вашего дистрибутива Linux.');
+        });
+        
+        document.getElementById('download-mac').addEventListener('click', function() {
+            alert('Загрузка Яндекс.Браузера для macOS начата!\n\nФайл: Yandex.dmg\nРазмер: 89.1 MB\n\nПоддерживаются macOS 10.12 и выше.');
         });
         
         // Обновление года в футере
-        document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} LoadBrowser. Все права защищены. LoadBrowser не аффилирован с компаниями, чьи игры представлены в каталоге.`;
+        document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} Загрузки. Все права защищены. Все программы являются собственностью их разработчиков.`;
         
         // Отправка комментария
         const commentForm = document.querySelector('.comment-form');
@@ -1189,7 +1354,7 @@
         
         breadcrumbLinks.forEach(link => {
             const href = link.getAttribute('href');
-            if (href === currentPage || (currentPage.includes('browser') && href.includes(currentPage.replace('-browser.html', '')))) {
+            if (href === currentPage || (currentPage.includes('yandex') && href.includes('browsers'))) {
                 link.style.color = 'var(--primary-color)';
                 link.style.fontWeight = '600';
             }
