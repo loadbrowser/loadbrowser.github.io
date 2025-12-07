@@ -3,156 +3,1251 @@ layout: default
 title: Скачать Яндекс
 description: Скачайте Яндекс бесплатно на компьютер Windows.
 ---
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f5f7fa;
-    color: #222;
-  }
 
-  header {
-    text-align: center;
-    padding: 80px 20px;
-    background: #0073ff; /* сплошной спокойный цвет */
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-  }
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузки - Бесплатные программы для Windows: Яндекс.Браузер, Яндекс.Диск, AdGuard</title>
+    <meta name="description" content="Скачайте лучшие программы для Windows бесплатно: Яндекс.Браузер, Яндекс.Диск, AdGuard, AdGuard VPN. Официальные версии, безопасные загрузки.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3366FF;
+            --primary-dark: #2952CC;
+            --secondary-color: #4CAF50;
+            --accent-color: #FF9800;
+            --light-color: #f5f5f5;
+            --dark-color: #212121;
+            --gray-color: #757575;
+            --light-gray: #e0e0e0;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --border-radius: 12px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
 
-  header h1 {
-    font-size: 36px;
-    font-weight: 700;
-    margin: 0;
-    line-height: 1.2;
-    color: #ffffff; /* обычный белый текст */
-    -webkit-background-clip: unset;
-    -webkit-text-fill-color: unset;
-    animation: none;
-    text-shadow: none; /* убрать тень */
-  }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  header p {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.85); /* чуть менее яркий белый */
-    text-shadow: none; /* убрать тень */
-  }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f9f9f9;
+        }
 
-  @media (max-width: 600px) {
-    header h1 { font-size: 28px; }
-    header p { font-size: 16px; }
-  }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-  .wrap {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-  }
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-  .block {
-    background: #fff;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
 
-  .block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-  }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
 
-  .block h2 {
-    margin-top: 0;
-    font-size: 22px;
-    font-weight: 700;
-    color: #0073ff;
-  }
+        .logo i {
+            color: var(--secondary-color);
+        }
 
-  .block p {
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
 
-  .btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background: #0073ff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    transition: 0.25s;
-    box-shadow: 0 4px 12px rgba(0,115,255,0.25);
-  }
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+            font-weight: 400;
+        }
 
-  .btn:hover {
-    background: #005fd1;
-    box-shadow: 0 6px 16px rgba(0,115,255,0.35);
-    transform: translateY(-2px);
-  }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
 
-  @media (max-width: 600px) {
-    .btn { width: 100%; text-align: center; }
-  }
-</style>
+        .nav-links a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
 
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .search-btn {
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 0.9rem;
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search-btn:hover {
+            background-color: var(--light-gray);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%233366FF" opacity="0.03"/></svg>') no-repeat;
+            background-size: cover;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .hero-text h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            margin-top: 5px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--dark-color);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(51, 102, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .category-icon i {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+        }
+
+        .category-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .category-card p {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+        }
+
+        .category-count {
+            display: inline-block;
+            background-color: var(--light-gray);
+            color: var(--gray-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Featured Apps */
+        .featured-apps {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .app-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--dark-color);
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .app-header {
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .app-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .app-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .app-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .app-info p {
+            color: var(--gray-color);
+            font-size: 0.95rem;
+        }
+
+        .app-body {
+            padding: 0 25px 25px;
+        }
+
+        .app-description {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .app-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .app-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .app-features li i {
+            color: var(--success-color);
+            font-size: 0.9rem;
+        }
+
+        .app-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background-color: #f9f9f9;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .app-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .app-size {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            background-color: #E3F2FD;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(51, 102, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .feature-icon i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        /* Latest Updates */
+        .latest-updates {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+
+        .updates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .update-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .update-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .update-date {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .update-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .update-card p {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+        }
+
+        .update-tag {
+            display: inline-block;
+            background-color: var(--light-gray);
+            color: var(--gray-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn {
+            background-color: white;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            padding: 15px 40px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #b0b7c3;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2d3748;
+            color: #b0b7c3;
+            font-size: 0.9rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            margin-top: 30px;
+        }
+
+        .newsletter input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: var(--border-radius);
+            border: none;
+            margin-bottom: 10px;
+            font-family: inherit;
+        }
+
+        .newsletter button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .header-actions {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .categories-grid, .apps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="https://loadbrowser.github.io/" class="logo">
+                <i class="fas fa-download"></i>
+                <div class="logo-text">
+                    Загрузки
+                    <span class="logo-subtitle">Безопасные программы для Windows</span>
+                </div>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#" class="active">Главная</a>
+                <a href="#categories">Категории</a>
+                <a href="#apps">Программы</a>
+                <a href="#updates">Обновления</a>
+                <a href="#about">О сайте</a>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                    Поиск
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
-<header>
-  <h1>VPN и полезные расширения для Яндекс Браузера</h1>
-  <p>Скачивайте актуальные инструменты для безопасного и удобного серфинга</p>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Скачайте лучшие программы для <span>Windows</span></h1>
+                <p>Бесплатные и безопасные загрузки проверенных программ. Яндекс.Браузер, Яндекс.Диск, AdGuard и другие популярные приложения для вашего компьютера.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Загрузок в день</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Безопасность</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Доступность</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Программы для Windows">
+            </div>
+        </div>
+    </section>
 
-<div class="wrap">
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Популярные категории</h2>
+                <p>Найдите нужную программу по категориям</p>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="#apps" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Браузеры</h3>
+                    <p>Современные браузеры для быстрого и безопасного серфинга в интернете</p>
+                    <div class="category-count">8 программ</div>
+                </a>
+                
+                <a href="#apps" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Облачные хранилища</h3>
+                    <p>Синхронизация файлов между устройствами и безопасное хранение в облаке</p>
+                    <div class="category-count">5 программ</div>
+                </a>
+                
+                <a href="#apps" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Безопасность</h3>
+                    <p>Антивирусы, VPN, блокировщики рекламы и защита приватности</p>
+                    <div class="category-count">12 программ</div>
+                </a>
+                
+                <a href="#apps" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Утилиты</h3>
+                    <p>Полезные инструменты для оптимизации и настройки Windows</p>
+                    <div class="category-count">15 программ</div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <div class="block">
-    <h2>Яндекс Браузер с VPN</h2>
-    <p>Скачать VPN для Яндекс Браузера легко — этот браузер с технологией Protect и поддержкой расширений работает стабильно, а подключение VPN обеспечивает безопасный и приватный веб-серфинг.</p>
-    <a class="btn" href="https://loadbrowser.github.io/yandex-browser.html" rel="nofollow">Скачать VPN для Яндекс Браузера</a>
-  </div>
+    <!-- Featured Apps -->
+    <section class="featured-apps" id="apps">
+        <div class="container">
+            <div class="section-title">
+                <h2>Рекомендуемые программы</h2>
+                <p>Самые популярные и полезные программы для Windows</p>
+            </div>
+            
+            <div class="apps-grid">
+                <!-- Яндекс.Браузер -->
+                <a href="https://loadbrowser.github.io/yandex-browser.html" class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon" style="background-color: #FF2E2E;">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="app-info">
+                            <h3>Яндекс.Браузер</h3>
+                            <p>Быстрый и безопасный браузер</p>
+                        </div>
+                    </div>
+                    <div class="app-body">
+                        <p class="app-description">Браузер от Яндекса с защитой Active Protect, Турбо-режимом и встроенным переводчиком.</p>
+                        <ul class="app-features">
+                            <li><i class="fas fa-check"></i> Защита от опасных сайтов</li>
+                            <li><i class="fas fa-check"></i> Турбо-режим для медленного интернета</li>
+                            <li><i class="fas fa-check"></i> Встроенный переводчик</li>
+                            <li><i class="fas fa-check"></i> Синхронизация между устройствами</li>
+                        </ul>
+                    </div>
+                    <div class="app-footer">
+                        <div class="app-actions">
+                            <span class="btn btn-primary">Скачать</span>
+                        </div>
+                        <div class="app-size">87.5 МБ</div>
+                    </div>
+                </a>
+                
+                <!-- Яндекс.Диск -->
+                <a href="https://loadbrowser.github.io/yandex-disk.html" class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon" style="background-color: #FFCC00;">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="app-info">
+                            <h3>Яндекс.Диск</h3>
+                            <p>Облачное хранилище файлов</p>
+                        </div>
+                    </div>
+                    <div class="app-body">
+                        <p class="app-description">Бесплатное облачное хранилище от Яндекса с автоматической синхронизацией файлов.</p>
+                        <ul class="app-features">
+                            <li><i class="fas fa-check"></i> 10 ГБ бесплатно</li>
+                            <li><i class="fas fa-check"></i> Автосинхронизация файлов</li>
+                            <li><i class="fas fa-check"></i> Общий доступ к файлам</li>
+                            <li><i class="fas fa-check"></i> История версий (30 дней)</li>
+                        </ul>
+                    </div>
+                    <div class="app-footer">
+                        <div class="app-actions">
+                            <span class="btn btn-primary">Скачать</span>
+                        </div>
+                        <div class="app-size">95.3 МБ</div>
+                    </div>
+                </a>
+                
+                <!-- AdGuard -->
+                <a href="https://loadbrowser.github.io/adguard.html" class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon" style="background-color: #4CAF50;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="app-info">
+                            <h3>AdGuard</h3>
+                            <p>Блокировщик рекламы и трекеров</p>
+                        </div>
+                    </div>
+                    <div class="app-body">
+                        <p class="app-description">Мощный блокировщик рекламы для чистого и безопасного интернета без трекеров.</p>
+                        <ul class="app-features">
+                            <li><i class="fas fa-check"></i> Блокировка всей рекламы</li>
+                            <li><i class="fas fa-check"></i> Защита от трекеров и фишинга</li>
+                            <li><i class="fas fa-check"></i> Родительский контроль</li>
+                            <li><i class="fas fa-check"></i> Экономия трафика</li>
+                        </ul>
+                    </div>
+                    <div class="app-footer">
+                        <div class="app-actions">
+                            <span class="btn btn-primary">Скачать</span>
+                        </div>
+                        <div class="app-size">52.8 МБ</div>
+                    </div>
+                </a>
+                
+                <!-- AdGuard VPN -->
+                <a href="https://loadbrowser.github.io/adguard-vpn.html" class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon" style="background-color: #2196F3;">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="app-info">
+                            <h3>AdGuard VPN</h3>
+                            <p>VPN для защиты приватности</p>
+                        </div>
+                    </div>
+                    <div class="app-body">
+                        <p class="app-description">Надежный VPN-сервис для анонимного серфинга, обхода блокировок и защиты данных.</p>
+                        <ul class="app-features">
+                            <li><i class="fas fa-check"></i> Безлоговый режим</li>
+                            <li><i class="fas fa-check"></i> 750+ серверов в 65 странах</li>
+                            <li><i class="fas fa-check"></i> До 1 Гбит/с скорость</li>
+                            <li><i class="fas fa-check"></i> Совместимость с AdGuard</li>
+                        </ul>
+                    </div>
+                    <div class="app-footer">
+                        <div class="app-actions">
+                            <span class="btn btn-primary">Скачать</span>
+                        </div>
+                        <div class="app-size">52.8 МБ</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <div class="block">
-    <h2>Яндекс Диск с безопасным VPN</h2>
-    <p>Используйте VPN для Яндекс Диска, чтобы защищать свои файлы и документы. VPN для Яндекс Браузера также гарантирует приватный доступ к облаку и безопасный обмен ссылками.</p>
-    <a class="btn" href="https://loadbrowser.github.io/yandex-disk.html">Скачать VPN</a>
-  </div>
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Почему выбирают нас</h2>
+                <p>Наши преимущества для безопасных загрузок</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>100% безопасность</h3>
+                    <p>Все программы проверяются на вирусы перед публикацией. Мы гарантируем безопасность загрузок.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Быстрые загрузки</h3>
+                    <p>Высокоскоростные серверы обеспечивают быструю загрузку файлов без ограничений скорости.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Официальные версии</h3>
+                    <p>Только официальные версии программ от разработчиков без изменений и модификаций.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Актуальные версии</h3>
+                    <p>Всегда самые последние версии программ с регулярными обновлениями и исправлениями.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="block">
-    <h2>AdGuard для Яндекс Браузера</h2>
-    <p>AdGuard для Яндекс Браузера блокирует рекламу, всплывающие окна и защищает от фишинговых и вредоносных сайтов. Программа улучшает скорость загрузки страниц, экономит трафик и обеспечивает безопасный просмотр.</p>
-    <a class="btn" href="https://loadbrowser.github.io/adguard.html">Скачать AdGuard для Яндекс Браузера</a>
-  </div>
+    <!-- Latest Updates -->
+    <section class="latest-updates" id="updates">
+        <div class="container">
+            <div class="section-title">
+                <h2>Последние обновления</h2>
+                <p>Свежие версии и новости о программах</p>
+            </div>
+            
+            <div class="updates-grid">
+                <div class="update-card">
+                    <div class="update-date">
+                        <i class="far fa-calendar"></i> 25 ноября 2023
+                    </div>
+                    <h3>Яндекс.Браузер 23.11.1</h3>
+                    <p>Вышла новая версия Яндекс.Браузера с улучшенной защитой Active Protect и оптимизацией скорости загрузки страниц.</p>
+                    <a href="https://loadbrowser.github.io/yandex-browser.html" class="update-tag">Скачать</a>
+                </div>
+                
+                <div class="update-card">
+                    <div class="update-date">
+                        <i class="far fa-calendar"></i> 20 ноября 2023
+                    </div>
+                    <h3>Яндекс.Диск 3.2.18</h3>
+                    <p>Обновление облачного хранилища с улучшенной синхронизацией и новыми возможностями общего доступа к файлам.</p>
+                    <a href="https://loadbrowser.github.io/yandex-disk.html" class="update-tag">Скачать</a>
+                </div>
+                
+                <div class="update-card">
+                    <div class="update-date">
+                        <i class="far fa-calendar"></i> 18 ноября 2023
+                    </div>
+                    <h3>AdGuard VPN для Яндекс.Браузера</h3>
+                    <p>Добавлено расширение AdGuard VPN специально для Яндекс.Браузера с улучшенной интеграцией.</p>
+                    <a href="https://loadbrowser.github.io/adguard-vpn.html" class="update-tag">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="block">
-    <h2>YouTube для Яндекс Браузера</h2>
-    <p>Используйте расширения и сервисы для комфортного просмотра YouTube в Яндекс Браузере: ускорение видео, блокировка рекламы, перевод и VPN для обхода ограничений. Смотрите контент без тормозов и ограничений.</p>
-    <a class="btn" href="https://loadbrowser.github.io/yandex-browser-youtube.html">Настройка YouTube для Яндекс Браузера</a>
-  </div>
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Начните скачивать безопасно уже сегодня</h2>
+            <p>Присоединяйтесь к тысячам пользователей, которые доверяют нам загрузку проверенных программ для Windows</p>
+            <button class="btn" id="explore-btn">
+                <i class="fas fa-rocket"></i> Исследовать все программы
+            </button>
+        </div>
+    </section>
 
-  <div class="block">
-    <h2>AdGuard VPN для Яндекс Браузера</h2>
-    <p>AdGuard VPN для Яндекс Браузера обеспечивает скрытие IP, защиту данных от слежки и рекламы. Работает на всех устройствах и интегрируется с браузером для безопасного серфинга.</p>
-    <a class="btn" href="https://loadbrowser.github.io/adguard-vpn.html">Скачать VPN для Яндекс Браузера</a>
-  </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Загрузки</h3>
+                    <p>Каталог проверенных программ для Windows. Все файлы проверяются на вирусы и безопасность перед публикацией.</p>
+                    <div style="margin-top: 20px; display: flex; gap: 15px;">
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-vk"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-telegram"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Популярные программы</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://loadbrowser.github.io/yandex-browser.html">Яндекс.Браузер</a></li>
+                        <li><a href="https://loadbrowser.github.io/yandex-disk.html">Яндекс.Диск</a></li>
+                        <li><a href="https://loadbrowser.github.io/adguard.html">AdGuard</a></li>
+                        <li><a href="https://loadbrowser.github.io/adguard-vpn.html">AdGuard VPN</a></li>
+                        <li><a href="#">Google Chrome</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Категории</h3>
+                    <ul class="footer-links">
+                        <li><a href="#apps">Браузеры</a></li>
+                        <li><a href="#apps">Облачные хранилища</a></li>
+                        <li><a href="#apps">Безопасность</a></li>
+                        <li><a href="#apps">Утилиты</a></li>
+                        <li><a href="#apps">Мультимедиа</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Полезные ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">О сайте</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Политика безопасности</a></li>
+                        <li><a href="#">Условия использования</a></li>
+                        <li><a href="#">Карта сайта</a></li>
+                    </ul>
+                    
+                    <div class="newsletter">
+                        <h4 style="margin-bottom: 15px; font-size: 1rem;">Новости и обновления</h4>
+                        <input type="email" placeholder="Ваш email">
+                        <button>Подписаться</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Загрузки. Все права защищены. Все программы являются собственностью их разработчиков.</p>
+                <p style="margin-top: 10px;">Сайт предоставляет ссылки для загрузки официальных версий программ.</p>
+            </div>
+        </div>
+    </footer>
 
-  <div class="block">
-    <h2>HideMyName VPN для Яндекс Браузера</h2>
-    <p>С HideMyName VPN для Яндекс Браузера можно обходить блокировки сайтов, скрывать IP и безопасно просматривать любой контент. VPN гарантирует приватность и стабильное соединение.</p>
-    <a class="btn" href="https://loadbrowser.github.io/hidemyname-vpn.html">Скачать VPN для Яндекс Браузера</a>
-  </div>
-
-</div>
-
+    <script>
+        // Мобильное меню
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const headerActions = document.querySelector('.header-actions');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+                headerActions.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                headerActions.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.padding = '20px';
+                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                navLinks.style.gap = '15px';
+                
+                headerActions.style.flexDirection = 'column';
+                headerActions.style.position = 'absolute';
+                headerActions.style.top = 'calc(100% + 180px)';
+                headerActions.style.left = '0';
+                headerActions.style.right = '0';
+                headerActions.style.backgroundColor = 'white';
+                headerActions.style.padding = '20px';
+                headerActions.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+            }
+        });
+        
+        // Кнопка поиска
+        document.querySelector('.search-btn').addEventListener('click', function() {
+            const searchTerm = prompt('Введите название программы для поиска:');
+            if (searchTerm) {
+                alert(`Поиск: "${searchTerm}"\n\nРезультаты поиска будут показаны на странице.`);
+            }
+        });
+        
+        // Кнопка исследования
+        document.getElementById('explore-btn').addEventListener('click', function() {
+            window.location.href = '#apps';
+        });
+        
+        // Обновление года в футере
+        document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} Загрузки. Все права защищены. Все программы являются собственностью их разработчиков.`;
+        
+        // Подписка на рассылку
+        const newsletterBtn = document.querySelector('.newsletter button');
+        const newsletterInput = document.querySelector('.newsletter input');
+        
+        newsletterBtn.addEventListener('click', function() {
+            if (newsletterInput.value.trim() === '') {
+                alert('Пожалуйста, введите ваш email адрес');
+                return;
+            }
+            
+            if (!newsletterInput.value.includes('@')) {
+                alert('Пожалуйста, введите корректный email адрес');
+                return;
+            }
+            
+            alert(`Спасибо за подписку!\n\nНа адрес ${newsletterInput.value} будут отправляться новости о новых программах и обновлениях.`);
+            newsletterInput.value = '';
+        });
+        
+        // Анимация элементов при прокрутке
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Применяем анимацию к элементам
+        document.querySelectorAll('.category-card, .app-card, .feature-item, .update-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+        
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Закрытие мобильного меню
+                    if(window.innerWidth <= 768) {
+                        navLinks.style.display = 'none';
+                        headerActions.style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // Анимация статистики
+        const statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(stat => {
+            const finalNumber = parseInt(stat.textContent);
+            let currentNumber = 0;
+            const increment = finalNumber / 50;
+            const timer = setInterval(() => {
+                currentNumber += increment;
+                if (currentNumber >= finalNumber) {
+                    currentNumber = finalNumber;
+                    clearInterval(timer);
+                }
+                
+                if (stat.textContent.includes('K')) {
+                    stat.textContent = Math.floor(currentNumber) + 'K+';
+                } else if (stat.textContent.includes('%')) {
+                    stat.textContent = '100%';
+                } else {
+                    stat.textContent = Math.floor(currentNumber);
+                }
+            }, 30);
+        });
+        
+        // Подсветка ссылок при наведении
+        document.querySelectorAll('a').forEach(link => {
+            if (link.href.includes('loadbrowser.github.io')) {
+                link.addEventListener('mouseenter', function() {
+                    this.style.textDecoration = 'underline';
+                });
+                link.addEventListener('mouseleave', function() {
+                    this.style.textDecoration = 'none';
+                });
+            }
+        });
+    </script>
 </body>
+</html>
