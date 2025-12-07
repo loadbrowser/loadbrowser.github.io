@@ -3,10 +3,13 @@ layout: default
 title: HideMyName VPN для Яндекс Браузера | Скрыть IP и безопасный серфинг
 description: Узнайте, как установить HideMyName VPN в Яндекс Браузере для защиты данных, обхода блокировок и приватного просмотра сайтов.
 ---
+
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HideMyName VPN - Скачать бесплатный VPN для Windows, Android, iOS</title>
+    <meta name="description" content="Скачайте HideMyName VPN бесплатно - мощный VPN сервис для анонимного серфинга, обхода блокировок и защиты данных. Совместим с Яндекс.Браузером, AdGuard и другими программами.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -778,6 +781,161 @@ description: Узнайте, как установить HideMyName VPN в Ян�
             color: white;
         }
 
+        /* Compatibility Section */
+        .compatibility-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .compatibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .compatibility-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .compatibility-item:hover {
+            background-color: #F3F0FF;
+            transform: translateY(-3px);
+        }
+
+        .compatibility-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .compatibility-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            background-color: white;
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            background-color: white;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Navigation Cards */
+        .navigation-cards {
+            margin-top: 40px;
+        }
+
+        .nav-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .nav-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--border-radius);
+            padding: 30px;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(74, 0, 224, 0.2);
+        }
+
+        .nav-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .nav-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .nav-card p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .nav-card.secondary {
+            background: linear-gradient(135deg, #FF2E2E, #FF6666);
+        }
+
+        .nav-card.success {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+        }
+
+        .nav-card.info {
+            background: linear-gradient(135deg, #2196F3, #42A5F5);
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .main-content {
@@ -792,8 +950,8 @@ description: Узнайте, как установить HideMyName VPN в Ян�
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .advantages-grid {
-                grid-template-columns: 1fr;
+            .advantages-grid, .compatibility-grid, .nav-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -826,6 +984,10 @@ description: Узнайте, как установить HideMyName VPN в Ян�
             .comparison-table {
                 display: block;
                 overflow-x: auto;
+            }
+            
+            .advantages-grid, .compatibility-grid, .nav-cards-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -864,10 +1026,10 @@ description: Узнайте, как установить HideMyName VPN в Ян�
             
             <nav class="nav-links">
                 <a href="https://loadbrowser.github.io/">Главная</a>
-                <a href="https://loadbrowser.github.io/yandex-browser.html">Яндекс.Браузер</a>
-                <a href="#features">Возможности</a>
-                <a href="#download">Скачать</a>
-                <a href="#faq">FAQ</a>
+                <a href="https://loadbrowser.github.io/yandex-browser.html" class="active">Яндекс.Браузер</a>
+                <a href="https://loadbrowser.github.io/yandex-disk.html">Яндекс.Диск</a>
+                <a href="https://loadbrowser.github.io/adguard.html">AdGuard</a>
+                <a href="#download">Скачать VPN</a>
             </nav>
             
             <div class="header-actions">
@@ -889,6 +1051,8 @@ description: Узнайте, как установить HideMyName VPN в Ян�
             <a href="https://loadbrowser.github.io/"><i class="fas fa-home"></i> Главная</a>
             <i class="fas fa-chevron-right"></i>
             <a href="https://loadbrowser.github.io/yandex-browser.html">Яндекс.Браузер</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="https://loadbrowser.github.io/adguard.html">AdGuard</a>
             <i class="fas fa-chevron-right"></i>
             <span>HideMyName VPN</span>
         </div>
@@ -915,7 +1079,7 @@ description: Узнайте, как установить HideMyName VPN в Ян�
                         </div>
                         <span class="app-size">Размер: 52.8 MB</span>
                     </div>
-                    <p>Мощный VPN-сервис для защиты вашей приватности, обхода блокировок и безопасного серфинга в интернете. Бесплатный и платный тарифы.</p>
+                    <p>Мощный VPN-сервис для защиты вашей приватности, обхода блокировок и безопасного серфинга в интернете. Совместим с Яндекс.Браузером, AdGuard и другими программами.</p>
                     <div class="app-header-actions">
                         <button class="btn btn-primary" id="download-windows">
                             <i class="fas fa-download"></i> Скачать для Windows
@@ -941,7 +1105,7 @@ description: Узнайте, как установить HideMyName VPN в Ян�
                 <p><strong>HideMyName VPN</strong> — это современный VPN-сервис, который обеспечивает полную анонимность и безопасность в интернете. С помощью нашего сервиса вы сможете скрыть свой реальный IP-адрес, обойти географические ограничения и защитить свои данные от хакеров и слежки.</p>
                 
                 <div class="highlight">
-                    <p><strong>Бесплатный тариф:</strong> HideMyName VPN предлагает полностью бесплатный тариф с ограничением скорости 10 Мбит/с и доступом к 20+ серверам в 10 странах. Этого достаточно для безопасного серфинга и просмотра контента.</p>
+                    <p><strong>Совместимость с другими программами:</strong> HideMyName VPN отлично работает вместе с <a href="https://loadbrowser.github.io/yandex-browser.html" style="color: var(--primary-color); font-weight: 600;">Яндекс.Браузером</a>, <a href="https://loadbrowser.github.io/adguard.html" style="color: var(--primary-color); font-weight: 600;">AdGuard</a> и другими популярными приложениями. Вы можете использовать VPN совместно с блокировщиком рекламы для максимальной защиты.</p>
                 </div>
                 
                 <p>Сервис использует современные протоколы шифрования (OpenVPN, IKEv2, WireGuard) и не ведет логов вашей активности. Приложение имеет простой и интуитивно понятный интерфейс — подключение к VPN происходит в один клик.</p>
@@ -957,7 +1121,7 @@ description: Узнайте, как установить HideMyName VPN в Ян�
                     <li><i class="fas fa-check"></i> <strong>Обход блокировок</strong> — доступ к любым сайтам</li>
                     <li><i class="fas fa-check"></i> <strong>Защита Wi-Fi</strong> — безопасное использование публичных сетей</li>
                     <li><i class="fas fa-check"></i> <strong>Кill Switch</strong> — защита при потере VPN-соединения</li>
-                    <li><i class="fas fa-check"></i> <strong>Поддержка P2P</strong> — для торрентов и файлообменников</li>
+                    <li><i class="fas fa-check"></i> <strong>Совместимость</strong> — работает с Яндекс.Браузером и AdGuard</li>
                 </ul>
             </div>
             
@@ -1021,7 +1185,7 @@ description: Узнайте, как установить HideMyName VPN в Ян�
         <div class="sidebar">
             <!-- Related Apps -->
             <div class="related-apps">
-                <h3 class="section-title">Рекомендуем также</h3>
+                <h3 class="section-title">Популярные программы</h3>
                 <div class="related-apps-list">
                     <a href="https://loadbrowser.github.io/yandex-browser.html" class="related-app">
                         <div class="related-app-icon" style="background-color: #FF2E2E;">
@@ -1033,33 +1197,33 @@ description: Узнайте, как установить HideMyName VPN в Ян�
                         </div>
                     </a>
                     
-                    <a href="https://loadbrowser.github.io/" class="related-app">
+                    <a href="https://loadbrowser.github.io/yandex-disk.html" class="related-app">
+                        <div class="related-app-icon" style="background-color: #FFCC00;">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="related-app-info">
+                            <h4>Яндекс.Диск</h4>
+                            <p>Облачное хранилище файлов</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://loadbrowser.github.io/adguard.html" class="related-app">
                         <div class="related-app-icon" style="background-color: #4CAF50;">
-                            <i class="fas fa-download"></i>
-                        </div>
-                        <div class="related-app-info">
-                            <h4>Главная страница</h4>
-                            <p>Все программы для загрузки</p>
-                        </div>
-                    </a>
-                    
-                    <a href="#" class="related-app">
-                        <div class="related-app-icon" style="background-color: #2196F3;">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <div class="related-app-info">
-                            <h4>Proxy Master</h4>
-                            <p>Бесплатные прокси-серверы</p>
-                        </div>
-                    </a>
-                    
-                    <a href="#" class="related-app">
-                        <div class="related-app-icon" style="background-color: #9C27B0;">
-                            <i class="fas fa-eye-slash"></i>
+                            <i class="fas fa-shield-alt"></i>
                         </div>
                         <div class="related-app-info">
                             <h4>AdGuard</h4>
                             <p>Блокировщик рекламы</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://loadbrowser.github.io/adguard-vpn.html" class="related-app">
+                        <div class="related-app-icon" style="background-color: #2196F3;">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="related-app-info">
+                            <h4>AdGuard VPN</h4>
+                            <p>VPN сервис от AdGuard</p>
                         </div>
                     </a>
                 </div>
@@ -1146,64 +1310,185 @@ description: Узнайте, как установить HideMyName VPN в Ян�
         </div>
     </section>
 
+    <!-- Compatibility Section -->
+    <section class="compatibility-section">
+        <div class="container">
+            <h2 class="section-title">Совместимость с популярными программами</h2>
+            <p class="app-description" style="margin-bottom: 25px;">HideMyName VPN отлично работает вместе с другими популярными приложениями для максимальной производительности и защиты.</p>
+            
+            <div class="compatibility-grid">
+                <a href="https://loadbrowser.github.io/yandex-browser.html" class="compatibility-item">
+                    <div class="compatibility-icon" style="background-color: #FF2E2E;">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h4>Яндекс.Браузер</h4>
+                    <p style="text-align: center; font-size: 0.9rem; color: var(--gray-color); margin-top: 5px;">Полная совместимость</p>
+                </a>
+                
+                <a href="https://loadbrowser.github.io/adguard.html" class="compatibility-item">
+                    <div class="compatibility-icon" style="background-color: #4CAF50;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>AdGuard</h4>
+                    <p style="text-align: center; font-size: 0.9rem; color: var(--gray-color); margin-top: 5px;">Совместная работа</p>
+                </a>
+                
+                <a href="https://loadbrowser.github.io/yandex-disk.html" class="compatibility-item">
+                    <div class="compatibility-icon" style="background-color: #FFCC00;">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h4>Яндекс.Диск</h4>
+                    <p style="text-align: center; font-size: 0.9rem; color: var(--gray-color); margin-top: 5px;">Защита облака</p>
+                </a>
+                
+                <a href="https://loadbrowser.github.io/adguard-vpn.html" class="compatibility-item">
+                    <div class="compatibility-icon" style="background-color: #2196F3;">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h4>AdGuard VPN</h4>
+                    <p style="text-align: center; font-size: 0.9rem; color: var(--gray-color); margin-top: 5px;">Альтернатива</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Comparison Section -->
     <section class="comparison-section" id="faq">
         <div class="container">
-            <h2 class="section-title">Сравнение тарифов</h2>
+            <h2 class="section-title">Сравнение с другими VPN сервисами</h2>
             <table class="comparison-table">
                 <thead>
                     <tr>
                         <th>Функция</th>
-                        <th>Бесплатный</th>
-                        <th>Премиум</th>
-                        <th>Бизнес</th>
+                        <th>HideMyName VPN</th>
+                        <th><a href="https://loadbrowser.github.io/adguard-vpn.html" style="color: var(--dark-color); text-decoration: none;">AdGuard VPN</a></th>
+                        <th>NordVPN</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="feature-name">Скорость</td>
-                        <td class="other-check">10 Мбит/с</td>
-                        <td class="vpn-check">1 Гбит/с</td>
-                        <td class="vpn-check">1 Гбит/с</td>
+                        <td class="feature-name">Бесплатный тариф</td>
+                        <td class="vpn-check">✓ Есть (10 Мбит/с)</td>
+                        <td class="other-check">Ограниченный трафик</td>
+                        <td class="other-check">Нет</td>
                     </tr>
                     <tr>
-                        <td class="feature-name">Серверы</td>
-                        <td class="other-check">20+ (10 стран)</td>
-                        <td class="vpn-check">750+ (65 стран)</td>
-                        <td class="vpn-check">Все серверы</td>
+                        <td class="feature-name">Безлимитный трафик</td>
+                        <td class="vpn-check">✓ Да</td>
+                        <td class="other-check">На платных тарифах</td>
+                        <td class="vpn-check">✓ Да</td>
                     </tr>
                     <tr>
-                        <td class="feature-name">Трафик</td>
-                        <td class="vpn-check">Безлимитный</td>
-                        <td class="vpn-check">Безлимитный</td>
-                        <td class="vpn-check">Безлимитный</td>
+                        <td class="feature-name">Без логов</td>
+                        <td class="vpn-check">✓ Гарантируется</td>
+                        <td class="vpn-check">✓ Гарантируется</td>
+                        <td class="vpn-check">✓ Гарантируется</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Количество серверов</td>
+                        <td class="vpn-check">750+</td>
+                        <td class="other-check">300+</td>
+                        <td class="vpn-check">5500+</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Совместимость с AdGuard</td>
+                        <td class="vpn-check">✓ Полная</td>
+                        <td class="vpn-check">✓ Полная</td>
+                        <td class="other-check">Частичная</td>
                     </tr>
                     <tr>
                         <td class="feature-name">Поддержка P2P</td>
+                        <td class="other-check">Нет (бесплатный)</td>
                         <td class="other-check">Нет</td>
-                        <td class="vpn-check">Да</td>
-                        <td class="vpn-check">Да</td>
+                        <td class="vpn-check">✓ Да</td>
                     </tr>
                     <tr>
-                        <td class="feature-name">Одновременные подключения</td>
-                        <td class="other-check">1 устройство</td>
-                        <td class="vpn-check">5 устройств</td>
-                        <td class="vpn-check">10 устройств</td>
-                    </tr>
-                    <tr>
-                        <td class="feature-name">Kill Switch</td>
-                        <td class="other-check">Нет</td>
-                        <td class="vpn-check">Да</td>
-                        <td class="vpn-check">Да</td>
-                    </tr>
-                    <tr>
-                        <td class="feature-name">Стоимость</td>
-                        <td class="vpn-check">Бесплатно</td>
-                        <td class="other-check">$4.99/месяц</td>
-                        <td class="other-check">$9.99/месяц</td>
+                        <td class="feature-name">Стоимость (месяц)</td>
+                        <td class="vpn-check">Бесплатно / $4.99</td>
+                        <td class="other-check">$2.99 / $11.99</td>
+                        <td class="other-check">$11.95</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Можно ли использовать HideMyName VPN вместе с Яндекс.Браузером?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Да, HideMyName VPN полностью совместим с <a href="https://loadbrowser.github.io/yandex-browser.html" style="color: var(--primary-color);">Яндекс.Браузером</a>. После установки VPN просто запустите браузер - все соединения будут автоматически защищены. Вы также можете настроить исключения для определенных сайтов.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Работает ли HideMyName VPN с AdGuard?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Да, HideMyName VPN отлично работает вместе с <a href="https://loadbrowser.github.io/adguard.html" style="color: var(--primary-color);">AdGuard</a>. Рекомендуется сначала запустить VPN, а затем AdGuard. Это обеспечит двойную защиту: анонимность через VPN и блокировку рекламы через AdGuard.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Чем отличается HideMyName VPN от AdGuard VPN?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p><a href="https://loadbrowser.github.io/adguard-vpn.html" style="color: var(--primary-color);">AdGuard VPN</a> больше фокусируется на интеграции с блокировщиком рекламы, в то время как HideMyName VPN предлагает более широкий выбор серверов и бесплатный тариф с безлимитным трафиком. Оба сервиса качественные, выбор зависит от ваших потребностей.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Можно ли использовать VPN для Яндекс.Диска?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Да, HideMyName VPN защищает все интернет-соединения, включая <a href="https://loadbrowser.github.io/yandex-disk.html" style="color: var(--primary-color);">Яндекс.Диск</a>. Это особенно полезно при использовании публичных Wi-Fi сетей для загрузки или скачивания файлов из облачного хранилища.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Cards -->
+    <section class="navigation-cards">
+        <div class="container">
+            <h2 class="section-title">Другие полезные программы</h2>
+            <div class="nav-cards-grid">
+                <a href="https://loadbrowser.github.io/yandex-browser.html" class="nav-card secondary">
+                    <i class="fas fa-globe"></i>
+                    <h3>Яндекс.Браузер</h3>
+                    <p>Быстрый и безопасный браузер с интеграцией сервисов Яндекса</p>
+                </a>
+                
+                <a href="https://loadbrowser.github.io/yandex-disk.html" class="nav-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Яндекс.Диск</h3>
+                    <p>Облачное хранилище для ваших файлов с защитой через VPN</p>
+                </a>
+                
+                <a href="https://loadbrowser.github.io/adguard.html" class="nav-card success">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>AdGuard</h3>
+                    <p>Лучший блокировщик рекламы для безопасного серфинга</p>
+                </a>
+                
+                <a href="https://loadbrowser.github.io/adguard-vpn.html" class="nav-card info">
+                    <i class="fas fa-lock"></i>
+                    <h3>AdGuard VPN</h3>
+                    <p>Альтернативный VPN сервис от создателей AdGuard</p>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1261,7 +1546,7 @@ description: Узнайте, как установить HideMyName VPN в Ян�
                 <div class="comment-content">
                     <h4>Иван Сергеев</h4>
                     <div class="comment-date">7 ноября 2023</div>
-                    <p>Пользуюсь бесплатной версией уже 3 месяца. Отлично работает для обычного серфинга. Скорость достаточная для YouTube в HD. Рекомендую!</p>
+                    <p>Пользуюсь бесплатной версией уже 3 месяца вместе с <a href="https://loadbrowser.github.io/yandex-browser.html" style="color: var(--primary-color);">Яндекс.Браузером</a>. Отлично работает для обычного серфинга. Скорость достаточная для YouTube в HD. Рекомендую!</p>
                 </div>
             </div>
             
@@ -1272,7 +1557,7 @@ description: Узнайте, как установить HideMyName VPN в Ян�
                 <div class="comment-content">
                     <h4>Екатерина Морозова</h4>
                     <div class="comment-date">1 ноября 2023</div>
-                    <p>Перешла с другого VPN на HideMyName. Здесь реально есть бесплатный тариф, который работает. Покупала премиум на месяц — скорость просто отличная.</p>
+                    <p>Использую HideMyName VPN вместе с <a href="https://loadbrowser.github.io/adguard.html" style="color: var(--primary-color);">AdGuard</a>. Идеальная комбинация - никакой рекламы и полная анонимность. Бесплатный тариф работает отлично!</p>
                 </div>
             </div>
             
@@ -1283,7 +1568,7 @@ description: Узнайте, как установить HideMyName VPN в Ян�
                 <div class="comment-content">
                     <h4>Александр Козлов</h4>
                     <div class="comment-date">28 октября 2023</div>
-                    <p>Хороший VPN, но в бесплатной версии мало серверов. Зато действительно безлимитный трафик, что редкость для бесплатных VPN.</p>
+                    <p>Хороший VPN, особенно для работы с <a href="https://loadbrowser.github.io/yandex-disk.html" style="color: var(--primary-color);">Яндекс.Диском</a> в общественных местах. Защищает мои файлы при загрузке в облако через публичный Wi-Fi.</p>
                 </div>
             </div>
         </div>
@@ -1308,9 +1593,9 @@ description: Узнайте, как установить HideMyName VPN в Ян�
                     <ul class="footer-links">
                         <li><a href="https://loadbrowser.github.io/">Главная страница</a></li>
                         <li><a href="https://loadbrowser.github.io/yandex-browser.html">Яндекс.Браузер</a></li>
-                        <li><a href="#features">Возможности VPN</a></li>
-                        <li><a href="#download">Скачать VPN</a></li>
-                        <li><a href="#faq">Тарифы и цены</a></li>
+                        <li><a href="https://loadbrowser.github.io/yandex-disk.html">Яндекс.Диск</a></li>
+                        <li><a href="https://loadbrowser.github.io/adguard.html">AdGuard</a></li>
+                        <li><a href="https://loadbrowser.github.io/adguard-vpn.html">AdGuard VPN</a></li>
                     </ul>
                 </div>
                 
@@ -1318,10 +1603,10 @@ description: Узнайте, как установить HideMyName VPN в Ян�
                     <h3>Другие программы</h3>
                     <ul class="footer-links">
                         <li><a href="https://loadbrowser.github.io/yandex-browser.html">Яндекс.Браузер</a></li>
+                        <li><a href="https://loadbrowser.github.io/adguard.html">AdGuard</a></li>
+                        <li><a href="https://loadbrowser.github.io/yandex-disk.html">Яндекс.Диск</a></li>
+                        <li><a href="https://loadbrowser.github.io/adguard-vpn.html">AdGuard VPN</a></li>
                         <li><a href="#">Google Chrome</a></li>
-                        <li><a href="#">Firefox Browser</a></li>
-                        <li><a href="#">Opera VPN</a></li>
-                        <li><a href="#">Tor Browser</a></li>
                     </ul>
                 </div>
                 
@@ -1428,11 +1713,29 @@ description: Узнайте, как установить HideMyName VPN в Ян�
         }, observerOptions);
         
         // Применяем анимацию к элементам
-        document.querySelectorAll('.install-step, .related-app, .comment, .advantage-card').forEach(el => {
+        document.querySelectorAll('.install-step, .related-app, .comment, .advantage-card, .compatibility-item, .nav-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(el);
+        });
+        
+        // FAQ аккордеон
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Закрываем все открытые элементы
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Переключаем текущий элемент
+                item.classList.toggle('active');
+            });
         });
         
         // Подсветка активной ссылки в хлебных крошках
@@ -1468,6 +1771,18 @@ description: Узнайте, как установить HideMyName VPN в Ян�
                     }
                 }
             });
+        });
+        
+        // Подсветка ссылок в тексте при наведении
+        document.querySelectorAll('a').forEach(link => {
+            if (link.href.includes('loadbrowser.github.io')) {
+                link.addEventListener('mouseenter', function() {
+                    this.style.textDecoration = 'underline';
+                });
+                link.addEventListener('mouseleave', function() {
+                    this.style.textDecoration = 'none';
+                });
+            }
         });
     </script>
 </body>
