@@ -10,14 +10,17 @@
         :root {
             --primary-color: #FF3333;
             --primary-dark: #CC0000;
+            --primary-light: rgba(255, 51, 51, 0.1);
             --secondary-color: #FFCC00;
             --light-color: #f5f5f5;
             --dark-color: #212121;
             --gray-color: #757575;
             --light-gray: #e0e0e0;
-            --border-radius: 12px;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+            --border-radius: 16px;
+            --border-radius-btn: 12px;
+            --box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            --box-shadow-btn: 0 6px 20px rgba(255, 51, 51, 0.25);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
         }
 
         * {
@@ -27,7 +30,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: var(--dark-color);
             background-color: #f9f9f9;
@@ -43,7 +46,7 @@
         /* Header */
         header {
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -53,14 +56,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 18px 0;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.8rem;
+            gap: 14px;
+            font-size: 1.9rem;
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
@@ -68,6 +71,10 @@
 
         .logo i {
             color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .logo-text {
@@ -77,22 +84,23 @@
         }
 
         .logo-subtitle {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--gray-color);
             font-weight: 400;
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 30px;
         }
 
         .nav-links a {
             color: var(--dark-color);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: var(--transition);
             position: relative;
+            padding: 8px 0;
         }
 
         .nav-links a:hover {
@@ -106,43 +114,74 @@
         .nav-links a.active::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 100%;
-            height: 2px;
-            background-color: var(--primary-color);
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
         }
 
+        /* Стильные кнопки */
         .download-btn-header {
-            padding: 10px 25px;
-            background-color: var(--primary-color);
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
             border: none;
-            border-radius: var(--border-radius);
-            font-weight: 600;
+            border-radius: var(--border-radius-btn);
+            font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
             display: inline-block;
+            letter-spacing: 0.5px;
+            box-shadow: var(--box-shadow-btn);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .download-btn-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            transition: all 0.5s ease;
+            z-index: -1;
         }
 
         .download-btn-header:hover {
-            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 51, 51, 0.35);
+        }
+
+        .download-btn-header:hover::before {
+            left: 0;
         }
 
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: var(--dark-color);
             cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            background-color: var(--primary-light);
         }
 
         /* Hero Section */
         .hero {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #FFEBEE 0%, #FFECB3 100%);
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, #ffffff 0%, #fff5f5 50%, #fffaf0 100%);
             position: relative;
             overflow: hidden;
         }
@@ -150,220 +189,297 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%23FF3333" opacity="0.05"/></svg>') no-repeat;
-            background-size: cover;
+            top: -50%;
+            right: -20%;
+            width: 70%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 51, 51, 0.08) 0%, rgba(255, 51, 51, 0) 70%);
+            z-index: 0;
         }
 
         .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 60px;
             position: relative;
             z-index: 1;
-        }
-
-        .hero-text {
-            flex: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .hero-text h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--dark-color);
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-text h1 span {
-            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-text p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--gray-color);
-            margin-bottom: 30px;
-            max-width: 600px;
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .download-info {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
+        /* Главная кнопка загрузки */
         .download-btn-main {
-            padding: 15px 40px;
-            background-color: var(--primary-color);
+            padding: 20px 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
             border: none;
-            border-radius: var(--border-radius);
-            font-size: 1.2rem;
-            font-weight: 600;
+            border-radius: var(--border-radius-btn);
+            font-size: 1.3rem;
+            font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            letter-spacing: 0.5px;
+            box-shadow: var(--box-shadow-btn);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .download-btn-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            transition: all 0.5s ease;
+            z-index: -1;
         }
 
         .download-btn-main:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 51, 51, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 51, 51, 0.4);
+        }
+
+        .download-btn-main:hover::before {
+            left: 0;
         }
 
         .version-info {
             color: var(--gray-color);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            margin-top: 20px;
         }
 
         .version-info strong {
             color: var(--dark-color);
+            background: linear-gradient(135deg, var(--dark-color), var(--gray-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero-image {
-            flex: 1;
+        .features-list {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 40px;
         }
 
-        .hero-image img {
-            max-width: 100%;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
+        .feature-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 24px;
+            background-color: white;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .feature-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-badge i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
         }
 
         /* Features Section */
         .features {
-            padding: 80px 0;
+            padding: 90px 0;
             background-color: white;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.7rem;
             color: var(--dark-color);
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .section-title p {
             color: var(--gray-color);
             max-width: 700px;
             margin: 0 auto;
+            font-size: 1.15rem;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 35px;
         }
 
         .feature-card {
-            background-color: #f9f9f9;
+            background-color: white;
             border-radius: var(--border-radius);
-            padding: 35px 25px;
+            padding: 40px 30px;
             text-align: center;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .feature-icon {
-            width: 80px;
-            height: 80px;
-            background-color: rgba(255, 51, 51, 0.1);
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--primary-light, rgba(255, 51, 51, 0.1)), rgba(255, 204, 0, 0.1));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
+            margin: 0 auto 30px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(255, 51, 51, 0.2), rgba(255, 204, 0, 0.2));
         }
 
         .feature-icon i {
-            font-size: 2.2rem;
-            color: var(--primary-color);
+            font-size: 2.4rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.6rem;
+            margin-bottom: 18px;
         }
 
         .feature-card p {
             color: var(--gray-color);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            line-height: 1.7;
         }
 
         /* Why Yandex Browser */
         .why-yandex {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #E3F2FD 0%, #E8F5E9 100%);
+            padding: 90px 0;
+            background: linear-gradient(135deg, #f9f9ff 0%, #fff9f9 100%);
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
             margin-top: 40px;
         }
 
         .benefit-card {
             background-color: white;
             border-radius: var(--border-radius);
-            padding: 35px 30px;
+            padding: 40px 35px;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .benefit-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
             color: var(--dark-color);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .benefit-card h3 i {
-            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .benefit-card ul {
             list-style: none;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .benefit-card li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-card li:last-child {
+            border-bottom: none;
         }
 
         .benefit-card li i {
-            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), #4CAF50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-top: 3px;
+            flex-shrink: 0;
         }
 
         /* Comparison Section */
         .comparison {
-            padding: 80px 0;
+            padding: 90px 0;
             background-color: white;
         }
 
@@ -372,213 +488,230 @@
             margin-top: 40px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             background-color: white;
+            min-width: 800px;
         }
 
         th, td {
-            padding: 20px;
+            padding: 22px 25px;
             text-align: left;
-            border-bottom: 1px solid var(--light-gray);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
 
         th {
-            background-color: #f5f5f5;
+            background-color: #f9f9f9;
+            font-weight: 700;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+
+        tr:hover {
+            background-color: rgba(255, 51, 51, 0.03);
+        }
+
+        .feature-name {
             font-weight: 600;
             color: var(--dark-color);
         }
 
-        tr:hover {
-            background-color: #f9f9f9;
-        }
-
-        .feature-name {
-            font-weight: 500;
-        }
-
         .check {
             color: #4CAF50;
-            font-weight: bold;
+            font-weight: 700;
+            font-size: 1.2rem;
         }
 
         .cross {
             color: #f44336;
-            font-weight: bold;
+            font-weight: 700;
+            font-size: 1.2rem;
         }
 
         /* Installation Guide */
         .installation {
-            padding: 80px 0;
-            background-color: #f5f5f5;
+            padding: 90px 0;
+            background: linear-gradient(135deg, #f5f5ff 0%, #fff5f5 100%);
         }
 
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            gap: 35px;
             margin-top: 40px;
         }
 
         .step-card {
             background-color: white;
             border-radius: var(--border-radius);
-            padding: 35px 25px;
+            padding: 40px 30px;
             text-align: center;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .step-number {
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             font-weight: 700;
-            margin: 0 auto 25px;
+            margin: 0 auto 30px;
+            box-shadow: 0 8px 20px rgba(255, 51, 51, 0.3);
         }
 
         .step-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+            color: var(--dark-color);
         }
 
         .step-card p {
             color: var(--gray-color);
+            line-height: 1.7;
         }
 
         /* CTA Section */
         .cta {
-            padding: 80px 0;
+            padding: 90px 0;
             background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: 0;
         }
 
         .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.7rem;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
         }
 
         .cta p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            margin-bottom: 45px;
+            opacity: 0.95;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+            z-index: 1;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             justify-content: center;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
 
         .btn {
-            padding: 15px 35px;
-            border-radius: var(--border-radius);
-            font-weight: 600;
+            padding: 18px 45px;
+            border-radius: var(--border-radius-btn);
+            font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
             border: none;
-            font-size: 1.1rem;
-            display: flex;
+            font-size: 1.15rem;
+            display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
 
         .btn-primary {
-            background-color: white;
+            background: linear-gradient(135deg, white, #f5f5f5);
             color: var(--primary-color);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f5f5f5, white);
+            transition: all 0.5s ease;
+            z-index: -1;
         }
 
         .btn-primary:hover {
-            background-color: #f5f5f5;
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover::before {
+            left: 0;
         }
 
         .btn-secondary {
-            background-color: transparent;
+            background: transparent;
             color: white;
-            border: 2px solid white;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+            z-index: -1;
         }
 
         .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 80px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .footer-column h3 {
-            font-size: 1.4rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
+        .btn-secondary:hover::before {
             left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #b0b7c3;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #2d3748;
-            color: #b0b7c3;
-            font-size: 0.9rem;
         }
 
         /* FAQ Section */
         .faq {
-            padding: 80px 0;
+            padding: 90px 0;
             background-color: white;
         }
 
@@ -587,50 +720,152 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
         }
 
         .faq-question {
-            padding: 20px;
-            background-color: #f5f5f5;
+            padding: 25px 30px;
+            background-color: #f9f9f9;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.1rem;
             transition: var(--transition);
         }
 
         .faq-question:hover {
-            background-color: #eeeeee;
+            background-color: #f0f0f0;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
         }
 
         .faq-answer {
-            padding: 0 20px;
+            padding: 0 30px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.5s ease;
+            background-color: white;
         }
 
         .faq-item.active .faq-answer {
-            padding: 20px;
+            padding: 25px 30px;
             max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: white;
+            padding: 90px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 45px;
+            margin-bottom: 70px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 28px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #b0b7c3;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            padding: 3px 0;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 35px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0b7c3;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
         }
 
         /* Responsive */
         @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
             .hero-text h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
-            .download-info {
-                justify-content: center;
-                flex-direction: column;
-                align-items: center;
+            .section-title h2 {
+                font-size: 2.4rem;
+            }
+            
+            .download-btn-main {
+                padding: 18px 45px;
+                font-size: 1.2rem;
             }
         }
 
@@ -644,11 +879,11 @@
             }
             
             .hero-text h1 {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 2.1rem;
             }
             
             .cta-buttons {
@@ -658,18 +893,40 @@
             
             .btn {
                 width: 100%;
-                max-width: 300px;
+                max-width: 320px;
                 justify-content: center;
+            }
+            
+            .features-list {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
         @media (max-width: 576px) {
             .hero-text h1 {
-                font-size: 1.8rem;
+                font-size: 2.1rem;
+            }
+            
+            .hero-text p {
+                font-size: 1.1rem;
             }
             
             .features-grid, .benefits-grid, .steps-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .download-btn-main {
+                padding: 16px 35px;
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.9rem;
+            }
+            
+            .feature-card, .benefit-card, .step-card {
+                padding: 35px 25px;
             }
         }
     </style>
@@ -679,7 +936,7 @@
     <header>
         <div class="container header-container">
             <a href="https://loadbrowser.github.io/" class="logo">
-                <i class="fas fa-download"></i>
+                <i class="fas fa-rocket"></i>
                 <div class="logo-text">
                     Загрузки
                     <span class="logo-subtitle">Яндекс Браузер</span>
@@ -695,7 +952,7 @@
             </nav>
             
             <a href="https://download.yandex.ru/downloadable_soft/browser/753774/YandexFull.exe" class="download-btn-header">
-                Скачать бесплатно
+                <i class="fas fa-download"></i> Скачать
             </a>
             
             <button class="mobile-menu-btn">
@@ -720,24 +977,24 @@
                     </div>
                 </div>
                 
-                <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 15px;">
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-check-circle" style="color: #4CAF50;"></i>
-                        <span>Безопасная загрузка</span>
+                <div class="features-list">
+                    <div class="feature-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Защита от вирусов</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-check-circle" style="color: #4CAF50;"></i>
-                        <span>Официальная версия</span>
+                    <div class="feature-badge">
+                        <i class="fas fa-bolt"></i>
+                        <span>Турбо-режим</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-check-circle" style="color: #4CAF50;"></i>
-                        <span>Без вирусов и рекламы</span>
+                    <div class="feature-badge">
+                        <i class="fas fa-robot"></i>
+                        <span>Алиса</span>
+                    </div>
+                    <div class="feature-badge">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>Синхронизация</span>
                     </div>
                 </div>
-            </div>
-            
-            <div class="hero-image">
-                <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site962714/03af1f93-d3b5-41dc-b819-2e16419f7bba/03af1f93-d3b5-41dc-b819-2e16419f7bba-10890413.jpeg" alt="Яндекс Браузер интерфейс">
             </div>
         </div>
     </section>
@@ -886,12 +1143,6 @@
                             <td class="check">✓</td>
                             <td class="check">✓</td>
                         </tr>
-                        <tr>
-                            <td class="feature-name">Менеджер паролей</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -910,7 +1161,7 @@
                 <div class="step-card">
                     <div class="step-number">1</div>
                     <h3>Скачайте установщик</h3>
-                    <p>Нажмите кнопку "Скачать" выше для загрузки официального установщика Яндекс Браузера</p>
+                    <p>Нажмите кнопку "Скачать" для загрузки официального установщика Яндекс Браузера</p>
                 </div>
                 
                 <div class="step-card">
@@ -943,7 +1194,7 @@
             </div>
             
             <div class="faq-list">
-                <div class="faq-item">
+                <div class="faq-item active">
                     <div class="faq-question">
                         <span>Бесплатно ли скачивание Яндекс Браузера?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -1010,11 +1261,11 @@
                 <div class="footer-column">
                     <h3>Яндекс Браузер</h3>
                     <p>Быстрый и безопасный браузер от Яндекса с уникальными функциями для комфортного серфинга в интернете. Скачайте официальную версию бесплатно.</p>
-                    <div style="margin-top: 20px; display: flex; gap: 15px;">
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-windows"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-apple"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-android"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-linux"></i></a>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-windows"></i></a>
+                        <a href="#"><i class="fab fa-apple"></i></a>
+                        <a href="#"><i class="fab fa-android"></i></a>
+                        <a href="#"><i class="fab fa-linux"></i></a>
                     </div>
                 </div>
                 
@@ -1077,13 +1328,14 @@
                 navLinks.style.left = '0';
                 navLinks.style.right = '0';
                 navLinks.style.backgroundColor = 'white';
-                navLinks.style.padding = '20px';
-                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-                navLinks.style.gap = '15px';
+                navLinks.style.padding = '25px';
+                navLinks.style.boxShadow = '0 15px 30px rgba(0,0,0,0.12)';
+                navLinks.style.gap = '18px';
+                navLinks.style.borderRadius = '0 0 16px 16px';
                 
                 if (headerActions) {
                     headerActions.style.position = 'absolute';
-                    headerActions.style.top = 'calc(100% + 180px)';
+                    headerActions.style.top = 'calc(100% + 200px)';
                     headerActions.style.left = '20px';
                     headerActions.style.right = '20px';
                     headerActions.style.textAlign = 'center';
@@ -1096,13 +1348,6 @@
             question.addEventListener('click', () => {
                 const item = question.parentElement;
                 item.classList.toggle('active');
-                
-                const icon = question.querySelector('i');
-                if (item.classList.contains('active')) {
-                    icon.className = 'fas fa-chevron-up';
-                } else {
-                    icon.className = 'fas fa-chevron-down';
-                }
             });
         });
         
@@ -1148,8 +1393,8 @@
         // Применяем анимацию к элементам
         document.querySelectorAll('.feature-card, .benefit-card, .step-card').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
         
@@ -1163,10 +1408,6 @@
                 // Здесь можно добавить аналитику
             });
         });
-        
-        // Открытие FAQ по умолчанию
-        document.querySelector('.faq-item').classList.add('active');
-        document.querySelector('.faq-item .faq-question i').className = 'fas fa-chevron-up';
         
         // Подсветка активного раздела при прокрутке
         window.addEventListener('scroll', () => {
@@ -1190,17 +1431,38 @@
             });
         });
         
-        // Анимация статистики при загрузке
+        // Анимация при загрузке
         window.addEventListener('load', () => {
             const heroTitle = document.querySelector('.hero-text h1');
             heroTitle.style.opacity = '0';
-            heroTitle.style.transform = 'translateY(20px)';
-            heroTitle.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            heroTitle.style.transform = 'translateY(30px)';
+            heroTitle.style.transition = 'opacity 1s ease, transform 1s ease';
             
             setTimeout(() => {
                 heroTitle.style.opacity = '1';
                 heroTitle.style.transform = 'translateY(0)';
             }, 300);
+            
+            const heroBtn = document.querySelector('.download-btn-main');
+            heroBtn.style.opacity = '0';
+            heroBtn.style.transform = 'translateY(30px)';
+            heroBtn.style.transition = 'opacity 1s ease 0.3s, transform 1s ease 0.3s';
+            
+            setTimeout(() => {
+                heroBtn.style.opacity = '1';
+                heroBtn.style.transform = 'translateY(0)';
+            }, 600);
+        });
+        
+        // Эффект при наведении на кнопки
+        document.querySelectorAll('.btn, .download-btn-main, .download-btn-header').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
         });
     </script>
 </body>
