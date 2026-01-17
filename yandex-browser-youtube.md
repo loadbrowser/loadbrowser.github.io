@@ -129,7 +129,7 @@ footer{max-width:var(--maxw);margin:0 auto;padding:24px 18px;color:var(--muted);
   <article class="card" id="install">
     <h2>Как настроить YouTube в Яндекс Браузере</h2>
     <p>
-      1. Установите Яндекс Браузер на ПК. <br>
+      1. Установите <a href="https://brousers.ru/yandex-browser-for-pc-and-laptop/">Яндекс Браузер для ПК</a>. <br>
       2. Перейдите в <a href="https://browser.yandex.ru/extensions" target="_blank">каталог расширений</a> и выберите нужные для YouTube: ускорители, VPN, блокировщики рекламы. <br>
       3. Активируйте расширения и настройте фильтры, чтобы видео загружалось быстро и без рекламы. <br>
       4. Используйте дополнительные функции, такие как перевод субтитров и «картинка в картинке» для удобного просмотра.
